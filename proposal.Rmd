@@ -1,5 +1,7 @@
 # Proposal
-
+1. 疫苗~death，
+2. 不同毒株
+3. 致死率
 ## Research topic
 
 ## Data availability
