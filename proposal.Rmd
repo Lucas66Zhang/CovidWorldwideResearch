@@ -6,16 +6,23 @@
 
 ## Data availability
 ### WHO Coronavirus (COVID-19) Dashboard
-On the WHO Coronavirus (COVID-19) Dashboard website, there are four datasets opened to be downloaded.
+On the WHO Coronavirus (COVID-19) Dashboard [website](https://covid19.who.int/data), there are four datasets opened to be downloaded.
 1. Daily cases and deaths by date reported to WHO
 2. Latest reported counts of cases and deaths
 3. Vaccination data
 4. Vaccination metadata
 
-**Source:** Click [here](https://covid19.who.int/data) to visit the WHO official website about Coronavirus (COVID-19) Data.
+#### Daily cases and deaths by date reported to WHO
+[Daily cases and deaths by date reported to WHO](https://covid19.who.int/WHO-COVID-19-global-data.csv)
 
-Here are thelinks to download the above four datasets:
-1. [Daily cases and deaths by date reported to WHO](https://covid19.who.int/WHO-COVID-19-global-data.csv)
+#### Latest reported counts of cases and deaths
+[Latest reported counts of cases and deaths](https://covid19.who.int/WHO-COVID-19-global-table-data.csv)
+
+#### Vaccination data
+[Vaccination data](https://covid19.who.int/who-data/vaccination-data.csv)
+
+#### Vaccination metadata
+[Vaccination metadata](https://covid19.who.int/who-data/vaccination-metadata.csv)
 
 **Published by:** 
 
