@@ -25,9 +25,25 @@ On the WHO Coronavirus (COVID-19) Dashboard [website](https://covid19.who.int/da
 [Vaccination metadata](https://covid19.who.int/who-data/vaccination-metadata.csv)
 
 **Published by:** 
+The datasets above is published by the World Health Organization (WHO).
 
 **Data format:** 
+The format of the datasets is csv file.
 
 **Frequency of updates: **
 
+According to the description on the WHO COVID-19 Dashboard, the datasets is updated weekly. 
+
 **Data size: **
+
+#### Daily cases and deaths by date reported to WHO
+File name: WHO-COVID-19-global-data.csv. Size: 10787 KB.
+
+#### Latest reported counts of cases and deaths
+File name: WHO-COVID-19-global-table-data.csv. Size: 17 KB.
+
+#### Vaccination data
+File name: vaccination-data.csv. Size: 49 KB.
+
+#### Vaccination metadata
+File name: vaccination-metadata.csv. Size: 49 KB.
