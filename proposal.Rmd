@@ -46,4 +46,4 @@ File name: WHO-COVID-19-global-table-data.csv. Size: 17 KB.
 File name: vaccination-data.csv. Size: 49 KB.
 
 #### Vaccination metadata
-File name: vaccination-metadata.csv. Size: 49 KB.
+File name: vaccination-metadata.csv. Size: 88 KB.
