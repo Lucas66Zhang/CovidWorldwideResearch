@@ -1,5 +1,5 @@
 # Proposal
-## Research topic
+## Research Topics
 The final project targets to analyze and visualize the distribution of COVID-19 from different aspects, including how fatality varies around the globe, how the virus spreads out, when and how the variants transform and lead to long-lasting damage, and how recent daily/weekly cases fluctuate. 
 
 Throughout these three years, COVID-19 has severely outbroken and struck the globe, paralyzed our economies and daily lives, and even transformed into different variants leading to continuing catastrophes. In this project, we are dedicated to taking advantage of different visualization tools and techniques from lectures to presenting how COVID-19 affects our globe in these years and digging into deeper insights into why the virus varies from time to time and from country to country.
