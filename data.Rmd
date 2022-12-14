@@ -1,8 +1,163 @@
-# Data 
+# Data
 
 ## Sources
 
+As we mentioned in Chapter 2, we will focus on four data sets published by WTO. Here are the description of them. Our data are downloaded from the WHO Coronavirus (COVID-19) Dashboard [website](https://covid19.who.int/data) on Dec. 13, 2022.
+
+### Daily cases and deaths by date reported to WHO
+
+This data set is designed to show the spread of covid-19 virus in countries, territories, and areas around the world from January 2020 to the present (It should be noticed that in our project we get records until Dec. 13, 2022). It contains 8 columns, whose detail descriptions are shown below.
+
+|    Field name     |  Type   |                                                                                                                                                                    Description                                                                                                                                                                    |
+|:---------------:|:---------------:|:-------------------------------------:|
+|   Date_reported   |  Date   |                                                                                                                                                             Date of reporting to WHO                                                                                                                                                              |
+|   Country_code    | String  |                                                                                                                                                             ISO Alpha-2 country code                                                                                                                                                              |
+|      Country      | String  |                                                                                                                                                             Country, territory, area                                                                                                                                                              |
+|    WHO_region     | String  | WHO regional offices: WHO Member States are grouped into six WHO regions -- Regional Office for Africa (AFRO), Regional Office for the Americas (AMRO), Regional Office for South-East Asia (SEARO), Regional Office for Europe (EURO), Regional Office for the Eastern Mediterranean (EMRO), and Regional Office for the Western Pacific (WPRO). |
+|     New_cases     | Integer |                                                                                                               New confirmed cases. Calculated by subtracting previous cumulative case count from current cumulative cases count.\*                                                                                                                |
+| Cumulative_cases  | Integer |                                                                                                                                                Cumulative confirmed cases reported to WHO to date.                                                                                                                                                |
+|    New_deaths     | Integer |                                                                                                                   New confirmed deaths. Calculated by subtracting previous cumulative deaths from current cumulative deaths.\*                                                                                                                    |
+| Cumulative_deaths | Integer |                                                                                                                                               Cumulative confirmed deaths reported to WHO to date.                                                                                                                                                |
+
+```{r}
+daily_case <- read.csv(file="./data/WHO-COVID-19-global-data.csv")
+# Brief view of the data.
+head(daily_case)
+```
+
+```{r}
+# See the number of countries, territories, and areas.
+cat("The number of conuntries, territories, and areas recorded: ",length(unique(daily_case$Country)))
+```
+
+```{r}
+# See the beginning date and ending date of the records.
+print(paste0("The last day of records: ", max(as.Date(daily_case$Date_reported))))
+print(paste0("The first day of records: ", min(as.Date(daily_case$Date_reported))))
+```
+
+According to the brief view of the data, it is tidy, which means that:
+
+1.  Every column is a variable.
+2.  Every row is an observation.
+3.  Every cell is a single value.
+
+It contains daily information of 237 countries, territories, and areas from 2020-01-03 to 2022-12-13.
+
+### Latest reported counts of cases and deaths
+
+Different from the data set of daily cases and deaths, this data set focus on the reported cases and deaths in the recent period (recent 7 days, and recent 24 hours). It contains 12 columns, and here are the descriptions of them.
+
+|                          Field name                          |  Type   |                                                                           Description                                                                            |
+|:--------------:|:--------------:|:--------------------------------------:|
+|                             Name                             | String  |                                                                     Country, territory, area                                                                     |
+|                          WHO_region                          | String  |                                                                            WHO Region                                                                            |
+|                   Cases - cumulative total                   | Integer |                                                       Cumulative confirmed cases reported to WHO to date.                                                        |
+|        Cases - cumulative total per 100000 population        | Decimal |                                            Cumulative confirmed cases reported to WHO to date per 100,000 population.                                            |
+|            Cases - newly reported in last 7 days             | Integer |  New confirmed cases reported in the last 7 days. Calculated by subtracting previous cumulative case count (8 days prior) from current cumulative cases count.   |
+| Cases - newly reported in last 7 days per 100000 population  | Decimal |                                             New confirmed cases reported in the last 7 days per 100,000 population.                                              |
+|           Cases - newly reported in last 24 hours            | Integer |         New confirmed cases reported in the last 24 hours. Calculated by subtracting previous cumulative case count from current cumulative cases count.         |
+|                  Deaths - cumulative total                   | Integer |                                                       Cumulative confirmed deaths reported to WHO to date.                                                       |
+|       Deaths - cumulative total per 100000 population        | Decimal |                                           Cumulative confirmed deaths reported to WHO to date per 100,000 population.                                            |
+|            Deaths - newly reported in last 7 days            | Integer | New confirmed deaths reported in the last 7 days. Calculated by subtracting previous cumulative death count (8 days prior) from current cumulative deaths count. |
+| Deaths - newly reported in last 7 days per 100000 population | Decimal |                                             New confirmed deaths reported in the last 7 days per 100,000 population.                                             |
+|           Deaths - newly reported in last 24 hours           | Integer |       New confirmed deaths reported in the last 24 hours. Calculated by subtracting previous cumulative death count from current cumulative deaths count.        |
+
+```{r}
+reccent_case <- read.csv(file="./data/WHO-COVID-19-global-table-data.csv")
+# Brief view of the data.
+head(reccent_case)
+```
+
+```{r}
+# See the number of countries, territories, and areas.
+cat("The number of conuntries, territories, and areas recorded: ",length(unique(reccent_case$WHO.Region))-1)
+```
+
+According to the brief view of the data set, this data set is tidy as well. Since it focuses on the recent cases, there is no column about the record date. Another thing that should be noticed is that the number of countries, territories, and areas is different from the last data set.
+
+### Vaccination data
+
+This data set shows the vaccination status of covid-19 in different countries, territories, and areas. The descriptions of the 12 columns are shown below.
+
+|              Field name              |   Type  |                                                                                                                                                                   Description                                                                                                                                                                   |
+|:------------------------------------:|:-------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| COUNTRY                              | String  | Country, territory, area                                                                                                                                                                                                                                                                                                                        |
+| ISO3                                 | String  | ISO Alpha-3 country code                                                                                                                                                                                                                                                                                                                        |
+| WHO_REGION                           | String  | WHO regional offices: WHO Member States are grouped into six WHO regions: Regional Office for Africa (AFRO), Regional Office for the Americas (AMRO), Regional Office for South-East Asia (SEARO), Regional Office for Europe (EURO), Regional Office for the Eastern Mediterranean (EMRO), and Regional Office for the Western Pacific (WPRO). |
+| DATA_SOURCE                          | String  | Indicates data source: - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: https://ourworldindata.org/covid-vaccinations                                                                                                                                                 |
+| DATE_UPDATED                         | Date    | Date of last update                                                                                                                                                                                                                                                                                                                             |
+| TOTAL_VACCINATIONS                   | Integer | Cumulative total vaccine doses administered                                                                                                                                                                                                                                                                                                     |
+| PERSONS_VACCINATED_1PLUS_DOSE        | Decimal | Cumulative number of persons vaccinated with at least one dose                                                                                                                                                                                                                                                                                  |
+| TOTAL_VACCINATIONS_PER100            | Integer | Cumulative total vaccine doses administered per 100 population                                                                                                                                                                                                                                                                                  |
+| PERSONS_VACCINATED_1PLUS_DOSE_PER100 | Decimal | Cumulative persons vaccinated with at least one dose per 100 population                                                                                                                                                                                                                                                                         |
+| PERSONS_FULLY_VACCINATED             | Integer | Cumulative number of persons fully vaccinated                                                                                                                                                                                                                                                                                                   |
+| PERSONS_FULLY_VACCINATED_PER100      | Decimal | Cumulative number of persons fully vaccinated per 100 population                                                                                                                                                                                                                                                                                |
+| VACCINES_USED                        | String  | Combined short name of vaccine: “Company - Product name” (see below)                                                                                                                                                                                                                                                                            |
+| FIRST_VACCINE_DATE                   | Date    | Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.                                                                                                                                                                                                                                     |
+| NUMBER_VACCINES_TYPES_USED           | Integer | Number of vaccine types used per country, territory, area                                                                                                                                                                                                                                                                                       |
+| PERSONS_BOOSTER_ADD_DOSE             | Integer | Persons received booster or additional dose                                                                                                                                                                                                                                                                                                     |
+| PERSONS_BOOSTER_ADD_DOSE_PER100      | Decimal | Persons received booster or additional dose per 100 population                                                                                                                                                                                                                                                                                  |
+
+```{r}
+vcc <- read.csv(file = "./data/vaccination-data.csv")
+# Brief view of the data.
+head(vcc)
+```
+```{r}
+# See the number of countries, territories, and areas.
+cat("The number of conuntries, territories, and areas recorded: ",length(unique(vcc$COUNTRY)))
+```
+
+The number of countries, territories, and areas is less than the total number of members of WHO, which means that some places still lack vaccine.
+
+### Vaccination metadata
+
+This data set is smaller than the last one and does not provide information about the vaccination population. Here are the detail descriptions about the 10 columns.
+
+|     Field name     |  Type  |                                                                                           Description                                                                                          |
+|:------------------:|:------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| ISO3               | String | ISO Alpha-3 country code                                                                                                                                                                       |
+| VACCINE_NAME       | String | Combined short name of vaccine: “Company - Product name” (see below)                                                                                                                           |
+| PRODUCT_NAME       | String | Name or label of vaccine product, or type of vaccine (if unnamed).                                                                                                                             |
+| COMPANY_NAME       | String | Marketing authorization holder of vaccine product.                                                                                                                                             |
+| FIRST_VACCINE_DATE | Date   | Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.                                                                                    |
+| AUTHORIZATION_DATE | Date   | Date vaccine product was authorised for use in the country, territory, area.                                                                                                                   |
+| START_DATE         | Date   | Start/launch date of vaccination with vaccine type (excludes vaccinations during clinical trials).                                                                                             |
+| END_DATE           | Date   | End date of vaccine rollout                                                                                                                                                                    |
+| COMMENT            | String | Comments related to vaccine rollout                                                                                                                                                            |
+| DATA_SOURCE        | String | Indicates data source - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: https://ourworldindata.org/covid-vaccinations |
+
+```{r}
+vcc_meta <- read.csv(file = "./data/vaccination-metadata.csv")
+# Brief view of the data.
+head(vcc_meta)
+```
+```{r}
+# See the number of countries, territories, and areas.
+cat("The number of conuntries, territories, and areas recorded: ",length(unique(vcc_meta$ISO3)))
+```
 ## Cleaning / transformation
+```{r}
+library(lubridate)
+library(dplyr)
+```
 
+```{r}
+daily_case$month = month(as.Date(daily_case$Date_reported))
+daily_case$year = year(as.Date(daily_case$Date_reported))
+
+group_table = group_by(daily_case, year, month)
+```
 ## Missing value analysis
+```{r}
+daily_case_na = sum(is.na(daily_case))
+reccent_case_na = sum(is.na(reccent_case))
+vcc_na = sum(is.na(vcc))
+vcc_meta_na = sum(is.na(vcc_meta))
 
+print(paste0("The number of missing values in daily reported and death data set: ", daily_case_na))
+print(paste0("The number of missing values in reccent reported and death data set: ", reccent_case_na))
+print(paste0("The number of missing values in vaccination data set: ", vcc_na))
+print(paste0("The number of missing values in vaccination meat-data set: ", vcc_meta_na))
+```

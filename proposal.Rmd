@@ -7,6 +7,7 @@ Throughout these three years, COVID-19 has severely outbroken and struck the glo
 ## Data availability
 ### WHO Coronavirus (COVID-19) Dashboard
 On the WHO Coronavirus (COVID-19) Dashboard [website](https://covid19.who.int/data), there are four datasets opened to be downloaded.
+
 1. Daily cases and deaths by date reported to WHO
 2. Latest reported counts of cases and deaths
 3. Vaccination data
