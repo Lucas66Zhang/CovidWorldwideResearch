@@ -13,6 +13,10 @@ vaccination-data-1
 vaccination-metadata-1
 data
 sources
+daily-cases-and-deaths-by-date-reported-to-who-2
+latest-reported-counts-of-cases-and-deaths-2
+vaccination-data-2
+vaccination-metadata-2
 cleaning-transformation
 missing-value-analysis
 results

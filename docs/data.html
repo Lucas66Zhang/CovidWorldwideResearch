@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Data | COVID-19 Worldwide Research</title>
   <meta name="description" content="Chapter 3 Data | COVID-19 Worldwide Research" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Data | COVID-19 Worldwide Research" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Names" />
 
 
-<meta name="date" content="2022-11-01" />
+<meta name="date" content="2022-12-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -83,7 +83,13 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#sources"><i class="fa fa-check"></i><b>3.1</b> Sources</a></li>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#sources"><i class="fa fa-check"></i><b>3.1</b> Sources</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="data.html"><a href="data.html#daily-cases-and-deaths-by-date-reported-to-who-2"><i class="fa fa-check"></i><b>3.1.1</b> Daily cases and deaths by date reported to WHO</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data.html"><a href="data.html#latest-reported-counts-of-cases-and-deaths-2"><i class="fa fa-check"></i><b>3.1.2</b> Latest reported counts of cases and deaths</a></li>
+<li class="chapter" data-level="3.1.3" data-path="data.html"><a href="data.html#vaccination-data-2"><i class="fa fa-check"></i><b>3.1.3</b> Vaccination data</a></li>
+<li class="chapter" data-level="3.1.4" data-path="data.html"><a href="data.html#vaccination-metadata-2"><i class="fa fa-check"></i><b>3.1.4</b> Vaccination metadata</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#cleaning-transformation"><i class="fa fa-check"></i><b>3.2</b> Cleaning / transformation</a></li>
 <li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#missing-value-analysis"><i class="fa fa-check"></i><b>3.3</b> Missing value analysis</a></li>
 </ul></li>
@@ -113,12 +119,426 @@
 <h1><span class="header-section-number">Chapter 3</span> Data<a href="data.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="sources" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Sources<a href="data.html#sources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As we mentioned in Chapter 2, we will focus on four data sets published by WTO. Here are the description of them. Our data are downloaded from the WHO Coronavirus (COVID-19) Dashboard <a href="https://covid19.who.int/data">website</a> on Dec. 13, 2022.</p>
+<div id="daily-cases-and-deaths-by-date-reported-to-who-2" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Daily cases and deaths by date reported to WHO<a href="data.html#daily-cases-and-deaths-by-date-reported-to-who-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This data set is designed to show the spread of covid-19 virus in countries, territories, and areas around the world from January 2020 to the present (It should be noticed that in our project we get records until Dec. 13, 2022). It contains 8 columns, whose detail descriptions are shown below.</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="23%" />
+<col width="53%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Field name</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Date_reported</td>
+<td align="center">Date</td>
+<td align="center">Date of reporting to WHO</td>
+</tr>
+<tr class="even">
+<td align="center">Country_code</td>
+<td align="center">String</td>
+<td align="center">ISO Alpha-2 country code</td>
+</tr>
+<tr class="odd">
+<td align="center">Country</td>
+<td align="center">String</td>
+<td align="center">Country, territory, area</td>
+</tr>
+<tr class="even">
+<td align="center">WHO_region</td>
+<td align="center">String</td>
+<td align="center">WHO regional offices: WHO Member States are grouped into six WHO regions – Regional Office for Africa (AFRO), Regional Office for the Americas (AMRO), Regional Office for South-East Asia (SEARO), Regional Office for Europe (EURO), Regional Office for the Eastern Mediterranean (EMRO), and Regional Office for the Western Pacific (WPRO).</td>
+</tr>
+<tr class="odd">
+<td align="center">New_cases</td>
+<td align="center">Integer</td>
+<td align="center">New confirmed cases. Calculated by subtracting previous cumulative case count from current cumulative cases count.*</td>
+</tr>
+<tr class="even">
+<td align="center">Cumulative_cases</td>
+<td align="center">Integer</td>
+<td align="center">Cumulative confirmed cases reported to WHO to date.</td>
+</tr>
+<tr class="odd">
+<td align="center">New_deaths</td>
+<td align="center">Integer</td>
+<td align="center">New confirmed deaths. Calculated by subtracting previous cumulative deaths from current cumulative deaths.*</td>
+</tr>
+<tr class="even">
+<td align="center">Cumulative_deaths</td>
+<td align="center">Integer</td>
+<td align="center">Cumulative confirmed deaths reported to WHO to date.</td>
+</tr>
+</tbody>
+</table>
+<pre><code>##   Date_reported Country_code     Country WHO_region New_cases Cumulative_cases New_deaths Cumulative_deaths
+## 1    2020-01-03           AF Afghanistan       EMRO         0                0          0                 0
+## 2    2020-01-04           AF Afghanistan       EMRO         0                0          0                 0
+## 3    2020-01-05           AF Afghanistan       EMRO         0                0          0                 0
+## 4    2020-01-06           AF Afghanistan       EMRO         0                0          0                 0
+## 5    2020-01-07           AF Afghanistan       EMRO         0                0          0                 0
+## 6    2020-01-08           AF Afghanistan       EMRO         0                0          0                 0</code></pre>
+<pre><code>## The number of conuntries, territories, and areas recorded:  237</code></pre>
+<pre><code>## [1] &quot;The last day of records: 2022-12-13&quot;</code></pre>
+<pre><code>## [1] &quot;The first day of records: 2020-01-03&quot;</code></pre>
+<p>According to the brief view of the data, it is tidy, which means that:</p>
+<ol style="list-style-type: decimal">
+<li>Every column is a variable.</li>
+<li>Every row is an observation.</li>
+<li>Every cell is a single value.</li>
+</ol>
+<p>It contains daily information of 237 countries, territories, and areas from 2020-01-03 to 2022-12-13.</p>
+</div>
+<div id="latest-reported-counts-of-cases-and-deaths-2" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Latest reported counts of cases and deaths<a href="data.html#latest-reported-counts-of-cases-and-deaths-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Different from the data set of daily cases and deaths, this data set focus on the reported cases and deaths in the recent period (recent 7 days, and recent 24 hours). It contains 12 columns, and here are the descriptions of them.</p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Field name</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Name</td>
+<td align="center">String</td>
+<td align="center">Country, territory, area</td>
+</tr>
+<tr class="even">
+<td align="center">WHO_region</td>
+<td align="center">String</td>
+<td align="center">WHO Region</td>
+</tr>
+<tr class="odd">
+<td align="center">Cases - cumulative total</td>
+<td align="center">Integer</td>
+<td align="center">Cumulative confirmed cases reported to WHO to date.</td>
+</tr>
+<tr class="even">
+<td align="center">Cases - cumulative total per 100000 population</td>
+<td align="center">Decimal</td>
+<td align="center">Cumulative confirmed cases reported to WHO to date per 100,000 population.</td>
+</tr>
+<tr class="odd">
+<td align="center">Cases - newly reported in last 7 days</td>
+<td align="center">Integer</td>
+<td align="center">New confirmed cases reported in the last 7 days. Calculated by subtracting previous cumulative case count (8 days prior) from current cumulative cases count.</td>
+</tr>
+<tr class="even">
+<td align="center">Cases - newly reported in last 7 days per 100000 population</td>
+<td align="center">Decimal</td>
+<td align="center">New confirmed cases reported in the last 7 days per 100,000 population.</td>
+</tr>
+<tr class="odd">
+<td align="center">Cases - newly reported in last 24 hours</td>
+<td align="center">Integer</td>
+<td align="center">New confirmed cases reported in the last 24 hours. Calculated by subtracting previous cumulative case count from current cumulative cases count.</td>
+</tr>
+<tr class="even">
+<td align="center">Deaths - cumulative total</td>
+<td align="center">Integer</td>
+<td align="center">Cumulative confirmed deaths reported to WHO to date.</td>
+</tr>
+<tr class="odd">
+<td align="center">Deaths - cumulative total per 100000 population</td>
+<td align="center">Decimal</td>
+<td align="center">Cumulative confirmed deaths reported to WHO to date per 100,000 population.</td>
+</tr>
+<tr class="even">
+<td align="center">Deaths - newly reported in last 7 days</td>
+<td align="center">Integer</td>
+<td align="center">New confirmed deaths reported in the last 7 days. Calculated by subtracting previous cumulative death count (8 days prior) from current cumulative deaths count.</td>
+</tr>
+<tr class="odd">
+<td align="center">Deaths - newly reported in last 7 days per 100000 population</td>
+<td align="center">Decimal</td>
+<td align="center">New confirmed deaths reported in the last 7 days per 100,000 population.</td>
+</tr>
+<tr class="even">
+<td align="center">Deaths - newly reported in last 24 hours</td>
+<td align="center">Integer</td>
+<td align="center">New confirmed deaths reported in the last 24 hours. Calculated by subtracting previous cumulative death count from current cumulative deaths count.</td>
+</tr>
+</tbody>
+</table>
+<pre><code>##                                     Name WHO.Region Cases...cumulative.total Cases...cumulative.total.per.100000.population
+## Global                                    645630482                 8283.112                                        3261885
+## United States of America        Americas   98072469                29628.907                                         448634
+## India                    South-East Asia   44675095                 3237.315                                           1312
+## France                            Europe   37433359                57554.932                                         434884
+## Germany                           Europe   36812671                44263.709                                         190185
+## Brazil                          Americas   35577538                16737.691                                         208433
+##                          Cases...newly.reported.in.last.7.days Cases...newly.reported.in.last.7.days.per.100000.population
+## Global                                                41.84833                                                      192915
+## United States of America                             135.53800                                                           0
+## India                                                  0.09500                                                         114
+## France                                               668.64700                                                       10878
+## Germany                                              228.67900                                                       33590
+## Brazil                                                98.05900                                                        6777
+##                          Cases...newly.reported.in.last.24.hours Deaths...cumulative.total
+## Global                                                   6634816                  85.12132
+## United States of America                                 1074367                 324.58000
+## India                                                     530658                  38.45300
+## France                                                    156247                 240.23500
+## Germany                                                   159177                 191.39500
+## Brazil                                                    690754                 324.97000
+##                          Deaths...cumulative.total.per.100000.population Deaths...newly.reported.in.last.7.days
+## Global                                                              9502                              0.1219058
+## United States of America                                            2934                              0.8860000
+## India                                                                 25                              0.0020000
+## France                                                               623                              0.9580000
+## Germany                                                              105                              0.1260000
+## Brazil                                                               630                              0.2960000
+##                          Deaths...newly.reported.in.last.7.days.per.100000.population
+## Global                                                                            645
+## United States of America                                                            0
+## India                                                                               0
+## France                                                                            167
+## Germany                                                                            14
+## Brazil                                                                              7
+##                          Deaths...newly.reported.in.last.24.hours
+## Global                                                         NA
+## United States of America                                       NA
+## India                                                          NA
+## France                                                         NA
+## Germany                                                        NA
+## Brazil                                                         NA</code></pre>
+<pre><code>## The number of conuntries, territories, and areas recorded:  235</code></pre>
+<p>According to the brief view of the data set, this data set is tidy as well. Since it focuses on the recent cases, there is no column about the record date. Another thing that should be noticed is that the number of countries, territories, and areas is different from the last data set.</p>
+</div>
+<div id="vaccination-data-2" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Vaccination data<a href="data.html#vaccination-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This data set shows the vaccination status of covid-19 in different countries, territories, and areas. The descriptions of the 12 columns are shown below.</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="2%" />
+<col width="87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Field name</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">COUNTRY</td>
+<td align="center">String</td>
+<td align="center">Country, territory, area</td>
+</tr>
+<tr class="even">
+<td align="center">ISO3</td>
+<td align="center">String</td>
+<td align="center">ISO Alpha-3 country code</td>
+</tr>
+<tr class="odd">
+<td align="center">WHO_REGION</td>
+<td align="center">String</td>
+<td align="center">WHO regional offices: WHO Member States are grouped into six WHO regions: Regional Office for Africa (AFRO), Regional Office for the Americas (AMRO), Regional Office for South-East Asia (SEARO), Regional Office for Europe (EURO), Regional Office for the Eastern Mediterranean (EMRO), and Regional Office for the Western Pacific (WPRO).</td>
+</tr>
+<tr class="even">
+<td align="center">DATA_SOURCE</td>
+<td align="center">String</td>
+<td align="center">Indicates data source: - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: <a href="https://ourworldindata.org/covid-vaccinations" class="uri">https://ourworldindata.org/covid-vaccinations</a></td>
+</tr>
+<tr class="odd">
+<td align="center">DATE_UPDATED</td>
+<td align="center">Date</td>
+<td align="center">Date of last update</td>
+</tr>
+<tr class="even">
+<td align="center">TOTAL_VACCINATIONS</td>
+<td align="center">Integer</td>
+<td align="center">Cumulative total vaccine doses administered</td>
+</tr>
+<tr class="odd">
+<td align="center">PERSONS_VACCINATED_1PLUS_DOSE</td>
+<td align="center">Decimal</td>
+<td align="center">Cumulative number of persons vaccinated with at least one dose</td>
+</tr>
+<tr class="even">
+<td align="center">TOTAL_VACCINATIONS_PER100</td>
+<td align="center">Integer</td>
+<td align="center">Cumulative total vaccine doses administered per 100 population</td>
+</tr>
+<tr class="odd">
+<td align="center">PERSONS_VACCINATED_1PLUS_DOSE_PER100</td>
+<td align="center">Decimal</td>
+<td align="center">Cumulative persons vaccinated with at least one dose per 100 population</td>
+</tr>
+<tr class="even">
+<td align="center">PERSONS_FULLY_VACCINATED</td>
+<td align="center">Integer</td>
+<td align="center">Cumulative number of persons fully vaccinated</td>
+</tr>
+<tr class="odd">
+<td align="center">PERSONS_FULLY_VACCINATED_PER100</td>
+<td align="center">Decimal</td>
+<td align="center">Cumulative number of persons fully vaccinated per 100 population</td>
+</tr>
+<tr class="even">
+<td align="center">VACCINES_USED</td>
+<td align="center">String</td>
+<td align="center">Combined short name of vaccine: “Company - Product name” (see below)</td>
+</tr>
+<tr class="odd">
+<td align="center">FIRST_VACCINE_DATE</td>
+<td align="center">Date</td>
+<td align="center">Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.</td>
+</tr>
+<tr class="even">
+<td align="center">NUMBER_VACCINES_TYPES_USED</td>
+<td align="center">Integer</td>
+<td align="center">Number of vaccine types used per country, territory, area</td>
+</tr>
+<tr class="odd">
+<td align="center">PERSONS_BOOSTER_ADD_DOSE</td>
+<td align="center">Integer</td>
+<td align="center">Persons received booster or additional dose</td>
+</tr>
+<tr class="even">
+<td align="center">PERSONS_BOOSTER_ADD_DOSE_PER100</td>
+<td align="center">Decimal</td>
+<td align="center">Persons received booster or additional dose per 100 population</td>
+</tr>
+</tbody>
+</table>
+<pre><code>##          COUNTRY ISO3 WHO_REGION DATA_SOURCE DATE_UPDATED TOTAL_VACCINATIONS PERSONS_VACCINATED_1PLUS_DOSE
+## 1    Afghanistan  AFG       EMRO   REPORTING   2022-12-05           12304901                      11320910
+## 2        Albania  ALB       EURO   REPORTING   2022-11-27            3017443                       1341413
+## 3        Algeria  DZA       AFRO   REPORTING   2022-09-04           15267442                       7840131
+## 4 American Samoa  ASM       WPRO   REPORTING   2022-08-23             111316                         44885
+## 5        Andorra  AND       EURO   REPORTING   2022-11-13             154367                         57901
+## 6         Angola  AGO       AFRO   REPORTING   2022-12-04           23468138                      14887847
+##   TOTAL_VACCINATIONS_PER100 PERSONS_VACCINATED_1PLUS_DOSE_PER100 PERSONS_FULLY_VACCINATED PERSONS_FULLY_VACCINATED_PER100
+## 1                    31.609                               29.081                 10615628                          27.270
+## 2                   104.900                               47.134                  1269112                          44.594
+## 3                    34.817                               17.879                  6481186                          14.780
+## 4                   201.670                               81.318                    41423                          75.046
+## 5                   199.800                               76.009                    53485                          70.211
+## 6                    71.405                               45.298                  8193976                          24.931
+##                                                                                                                                                                                                                                          VACCINES_USED
+## 1 AstraZeneca - Vaxzevria,Beijing CNBG - BBIBP-CorV,Bharat - Covaxin,CanSino - Convidecia,Gamaleya - Gam-Covid-Vac,Gamaleya - Sputnik-Light,Janssen - Ad26.COV 2-S,Moderna - Spikevax,Pfizer BioNTech - Comirnaty,SII - Covishield,Sinovac - CoronaVac
+## 2                                                                                                                                    AstraZeneca - Vaxzevria,Gamaleya - Gam-Covid-Vac,Pfizer BioNTech - Comirnaty,SII - Covishield,Sinovac - CoronaVac
+## 3                                                                                                                                                              Beijing CNBG - BBIBP-CorV,Gamaleya - Gam-Covid-Vac,SII - Covishield,Sinovac - CoronaVac
+## 4                                                                                                                                                                                Janssen - Ad26.COV 2-S,Moderna - Spikevax,Pfizer BioNTech - Comirnaty
+## 5                                                                                                                                                                               AstraZeneca - Vaxzevria,Moderna - Spikevax,Pfizer BioNTech - Comirnaty
+## 6                                                                                                                                                                                                                                     SII - Covishield
+##   FIRST_VACCINE_DATE NUMBER_VACCINES_TYPES_USED PERSONS_BOOSTER_ADD_DOSE PERSONS_BOOSTER_ADD_DOSE_PER100
+## 1         2021-02-22                         11                       NA                              NA
+## 2         2021-01-13                          5                   373263                          13.116
+## 3         2021-01-30                          4                   575651                           1.313
+## 4         2020-12-21                          3                    24160                          43.770
+## 5         2021-01-20                          3                    42981                          56.423
+## 6         2021-03-10                          1                  1368465                           4.164</code></pre>
+<pre><code>## The number of conuntries, territories, and areas recorded:  229</code></pre>
+<p>The number of countries, territories, and areas is less than the total number of members of WHO, which means that some places still lack vaccine.</p>
+</div>
+<div id="vaccination-metadata-2" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Vaccination metadata<a href="data.html#vaccination-metadata-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This data set is smaller than the last one and does not provide information about the vaccination population. Here are the detail descriptions about the 10 columns.</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="3%" />
+<col width="87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Field name</th>
+<th align="center">Type</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">ISO3</td>
+<td align="center">String</td>
+<td align="center">ISO Alpha-3 country code</td>
+</tr>
+<tr class="even">
+<td align="center">VACCINE_NAME</td>
+<td align="center">String</td>
+<td align="center">Combined short name of vaccine: “Company - Product name” (see below)</td>
+</tr>
+<tr class="odd">
+<td align="center">PRODUCT_NAME</td>
+<td align="center">String</td>
+<td align="center">Name or label of vaccine product, or type of vaccine (if unnamed).</td>
+</tr>
+<tr class="even">
+<td align="center">COMPANY_NAME</td>
+<td align="center">String</td>
+<td align="center">Marketing authorization holder of vaccine product.</td>
+</tr>
+<tr class="odd">
+<td align="center">FIRST_VACCINE_DATE</td>
+<td align="center">Date</td>
+<td align="center">Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.</td>
+</tr>
+<tr class="even">
+<td align="center">AUTHORIZATION_DATE</td>
+<td align="center">Date</td>
+<td align="center">Date vaccine product was authorised for use in the country, territory, area.</td>
+</tr>
+<tr class="odd">
+<td align="center">START_DATE</td>
+<td align="center">Date</td>
+<td align="center">Start/launch date of vaccination with vaccine type (excludes vaccinations during clinical trials).</td>
+</tr>
+<tr class="even">
+<td align="center">END_DATE</td>
+<td align="center">Date</td>
+<td align="center">End date of vaccine rollout</td>
+</tr>
+<tr class="odd">
+<td align="center">COMMENT</td>
+<td align="center">String</td>
+<td align="center">Comments related to vaccine rollout</td>
+</tr>
+<tr class="even">
+<td align="center">DATA_SOURCE</td>
+<td align="center">String</td>
+<td align="center">Indicates data source - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: <a href="https://ourworldindata.org/covid-vaccinations" class="uri">https://ourworldindata.org/covid-vaccinations</a></td>
+</tr>
+</tbody>
+</table>
+<pre><code>##   ISO3                VACCINE_NAME PRODUCT_NAME    COMPANY_NAME AUTHORIZATION_DATE START_DATE END_DATE COMMENT DATA_SOURCE
+## 1  SHN       AstraZeneca - AZD1222      AZD1222     AstraZeneca                                     NA      NA        OWID
+## 2  GRL         Moderna - mRNA-1273    mRNA-1273         Moderna                                     NA      NA        OWID
+## 3  FRO         Moderna - mRNA-1273    mRNA-1273         Moderna                                     NA      NA        OWID
+## 4  FRO Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech                                     NA      NA        OWID
+## 5  BIH       AstraZeneca - AZD1222      AZD1222     AstraZeneca                                     NA      NA        OWID
+## 6  BIH Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech                                     NA      NA        OWID</code></pre>
+<pre><code>## The number of conuntries, territories, and areas recorded:  225</code></pre>
+</div>
 </div>
 <div id="cleaning-transformation" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Cleaning / transformation<a href="data.html#cleaning-transformation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
 <div id="missing-value-analysis" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Missing value analysis<a href="data.html#missing-value-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<pre><code>## [1] &quot;The number of missing values in daily reported and death data set: 1076&quot;</code></pre>
+<pre><code>## [1] &quot;The number of missing values in reccent reported and death data set: 242&quot;</code></pre>
+<pre><code>## [1] &quot;The number of missing values in vaccination data set: 55&quot;</code></pre>
+<pre><code>## [1] &quot;The number of missing values in vaccination meat-data set: 2142&quot;</code></pre>
 
 </div>
 </div>
