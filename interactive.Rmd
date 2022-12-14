@@ -1,3 +1,37 @@
 # Interactive component
+<script src="https://d3js.org/d3.v7.js"></script>
+<script>
+// set the dimensions and margins of the map
+const width = 960;
+const height = 600;
+const margin = { top: 20, right: 20, bottom: 30, left: 40 };
 
+// append the svg object to the body of the page
+const svg = d3.select('body')
+  .append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+// load and display the world map
+d3.json('https://unpkg.com/world-atlas@1/world/110m.json').then(data => {
+  // create a new geography projection
+  const projection = d3.geoMercator()
+    .fitSize([width, height], data);
+
+  // create a new path generator using the projection
+  const path = d3.geoPath()
+    .projection(projection);
+
+  // add the path for each country to the svg
+  svg.selectAll('path')
+    .data(data.features)
+    .enter()
+    .append('path')
+      .attr('d', path)
+      .style('fill', '#ccc')
+      .style('stroke', '#333');
+});
+</script>
 
