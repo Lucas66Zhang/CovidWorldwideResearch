@@ -9,7 +9,7 @@ As we mentioned in Chapter 2, we will focus on four data sets published by WTO. 
 This data set is designed to show the spread of covid-19 virus in countries, territories, and areas around the world from January 2020 to the present (It should be noticed that in our project we get records until Dec. 13, 2022). It contains 8 columns, whose detail descriptions are shown below.
 
 |    Field name     |  Type   |                                                                                                                                                                    Description                                                                                                                                                                    |
-|:---------------:|:---------------:|:-------------------------------------:|
+|:----------------:|:----------------:|:----------------------------------:|
 |   Date_reported   |  Date   |                                                                                                                                                             Date of reporting to WHO                                                                                                                                                              |
 |   Country_code    | String  |                                                                                                                                                             ISO Alpha-2 country code                                                                                                                                                              |
 |      Country      | String  |                                                                                                                                                             Country, territory, area                                                                                                                                                              |
@@ -49,7 +49,7 @@ It contains daily information of 237 countries, territories, and areas from 2020
 Different from the data set of daily cases and deaths, this data set focus on the reported cases and deaths in the recent period (recent 7 days, and recent 24 hours). It contains 12 columns, and here are the descriptions of them.
 
 |                          Field name                          |  Type   |                                                                           Description                                                                            |
-|:--------------:|:--------------:|:--------------------------------------:|
+|:----------------:|:----------------:|:-----------------------------------:|
 |                             Name                             | String  |                                                                     Country, territory, area                                                                     |
 |                          WHO_region                          | String  |                                                                            WHO Region                                                                            |
 |                   Cases - cumulative total                   | Integer |                                                       Cumulative confirmed cases reported to WHO to date.                                                        |
@@ -80,30 +80,31 @@ According to the brief view of the data set, this data set is tidy as well. Sinc
 
 This data set shows the vaccination status of covid-19 in different countries, territories, and areas. The descriptions of the 12 columns are shown below.
 
-|              Field name              |   Type  |                                                                                                                                                                   Description                                                                                                                                                                   |
-|:------------------------------------:|:-------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| COUNTRY                              | String  | Country, territory, area                                                                                                                                                                                                                                                                                                                        |
-| ISO3                                 | String  | ISO Alpha-3 country code                                                                                                                                                                                                                                                                                                                        |
-| WHO_REGION                           | String  | WHO regional offices: WHO Member States are grouped into six WHO regions: Regional Office for Africa (AFRO), Regional Office for the Americas (AMRO), Regional Office for South-East Asia (SEARO), Regional Office for Europe (EURO), Regional Office for the Eastern Mediterranean (EMRO), and Regional Office for the Western Pacific (WPRO). |
-| DATA_SOURCE                          | String  | Indicates data source: - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: https://ourworldindata.org/covid-vaccinations                                                                                                                                                 |
-| DATE_UPDATED                         | Date    | Date of last update                                                                                                                                                                                                                                                                                                                             |
-| TOTAL_VACCINATIONS                   | Integer | Cumulative total vaccine doses administered                                                                                                                                                                                                                                                                                                     |
-| PERSONS_VACCINATED_1PLUS_DOSE        | Decimal | Cumulative number of persons vaccinated with at least one dose                                                                                                                                                                                                                                                                                  |
-| TOTAL_VACCINATIONS_PER100            | Integer | Cumulative total vaccine doses administered per 100 population                                                                                                                                                                                                                                                                                  |
-| PERSONS_VACCINATED_1PLUS_DOSE_PER100 | Decimal | Cumulative persons vaccinated with at least one dose per 100 population                                                                                                                                                                                                                                                                         |
-| PERSONS_FULLY_VACCINATED             | Integer | Cumulative number of persons fully vaccinated                                                                                                                                                                                                                                                                                                   |
-| PERSONS_FULLY_VACCINATED_PER100      | Decimal | Cumulative number of persons fully vaccinated per 100 population                                                                                                                                                                                                                                                                                |
-| VACCINES_USED                        | String  | Combined short name of vaccine: “Company - Product name” (see below)                                                                                                                                                                                                                                                                            |
-| FIRST_VACCINE_DATE                   | Date    | Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.                                                                                                                                                                                                                                     |
-| NUMBER_VACCINES_TYPES_USED           | Integer | Number of vaccine types used per country, territory, area                                                                                                                                                                                                                                                                                       |
-| PERSONS_BOOSTER_ADD_DOSE             | Integer | Persons received booster or additional dose                                                                                                                                                                                                                                                                                                     |
-| PERSONS_BOOSTER_ADD_DOSE_PER100      | Decimal | Persons received booster or additional dose per 100 population                                                                                                                                                                                                                                                                                  |
+|              Field name              |  Type   |                                                                                                                                                                   Description                                                                                                                                                                   |
+|:-----------:|:-----------:|:--------------------------------------------:|
+|               COUNTRY                | String  |                                                                                                                                                            Country, territory, area                                                                                                                                                             |
+|                 ISO3                 | String  |                                                                                                                                                            ISO Alpha-3 country code                                                                                                                                                             |
+|              WHO_REGION              | String  | WHO regional offices: WHO Member States are grouped into six WHO regions: Regional Office for Africa (AFRO), Regional Office for the Americas (AMRO), Regional Office for South-East Asia (SEARO), Regional Office for Europe (EURO), Regional Office for the Eastern Mediterranean (EMRO), and Regional Office for the Western Pacific (WPRO). |
+|             DATA_SOURCE              | String  |                                                                        Indicates data source: - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: <https://ourworldindata.org/covid-vaccinations>                                                                        |
+|             DATE_UPDATED             |  Date   |                                                                                                                                                               Date of last update                                                                                                                                                               |
+|          TOTAL_VACCINATIONS          | Integer |                                                                                                                                                   Cumulative total vaccine doses administered                                                                                                                                                   |
+|    PERSONS_VACCINATED_1PLUS_DOSE     | Decimal |                                                                                                                                         Cumulative number of persons vaccinated with at least one dose                                                                                                                                          |
+|      TOTAL_VACCINATIONS_PER100       | Integer |                                                                                                                                         Cumulative total vaccine doses administered per 100 population                                                                                                                                          |
+| PERSONS_VACCINATED_1PLUS_DOSE_PER100 | Decimal |                                                                                                                                     Cumulative persons vaccinated with at least one dose per 100 population                                                                                                                                     |
+|       PERSONS_FULLY_VACCINATED       | Integer |                                                                                                                                                  Cumulative number of persons fully vaccinated                                                                                                                                                  |
+|   PERSONS_FULLY_VACCINATED_PER100    | Decimal |                                                                                                                                        Cumulative number of persons fully vaccinated per 100 population                                                                                                                                         |
+|            VACCINES_USED             | String  |                                                                                                                                      Combined short name of vaccine: "Company - Product name" (see below)                                                                                                                                       |
+|          FIRST_VACCINE_DATE          |  Date   |                                                                                                                   Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.                                                                                                                   |
+|      NUMBER_VACCINES_TYPES_USED      | Integer |                                                                                                                                            Number of vaccine types used per country, territory, area                                                                                                                                            |
+|       PERSONS_BOOSTER_ADD_DOSE       | Integer |                                                                                                                                                   Persons received booster or additional dose                                                                                                                                                   |
+|   PERSONS_BOOSTER_ADD_DOSE_PER100    | Decimal |                                                                                                                                         Persons received booster or additional dose per 100 population                                                                                                                                          |
 
 ```{r}
 vcc <- read.csv(file = "./data/vaccination-data.csv")
 # Brief view of the data.
 head(vcc)
 ```
+
 ```{r}
 # See the number of countries, territories, and areas.
 cat("The number of conuntries, territories, and areas recorded: ",length(unique(vcc$COUNTRY)))
@@ -115,41 +116,56 @@ The number of countries, territories, and areas is less than the total number of
 
 This data set is smaller than the last one and does not provide information about the vaccination population. Here are the detail descriptions about the 10 columns.
 
-|     Field name     |  Type  |                                                                                           Description                                                                                          |
-|:------------------:|:------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ISO3               | String | ISO Alpha-3 country code                                                                                                                                                                       |
-| VACCINE_NAME       | String | Combined short name of vaccine: “Company - Product name” (see below)                                                                                                                           |
-| PRODUCT_NAME       | String | Name or label of vaccine product, or type of vaccine (if unnamed).                                                                                                                             |
-| COMPANY_NAME       | String | Marketing authorization holder of vaccine product.                                                                                                                                             |
-| FIRST_VACCINE_DATE | Date   | Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.                                                                                    |
-| AUTHORIZATION_DATE | Date   | Date vaccine product was authorised for use in the country, territory, area.                                                                                                                   |
-| START_DATE         | Date   | Start/launch date of vaccination with vaccine type (excludes vaccinations during clinical trials).                                                                                             |
-| END_DATE           | Date   | End date of vaccine rollout                                                                                                                                                                    |
-| COMMENT            | String | Comments related to vaccine rollout                                                                                                                                                            |
-| DATA_SOURCE        | String | Indicates data source - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: https://ourworldindata.org/covid-vaccinations |
+|     Field name     |  Type  |                                                                                           Description                                                                                            |
+|:-----------:|:-----------:|:--------------------------------------------:|
+|        ISO3        | String |                                                                                     ISO Alpha-3 country code                                                                                     |
+|    VACCINE_NAME    | String |                                                               Combined short name of vaccine: "Company - Product name" (see below)                                                               |
+|    PRODUCT_NAME    | String |                                                                Name or label of vaccine product, or type of vaccine (if unnamed).                                                                |
+|    COMPANY_NAME    | String |                                                                        Marketing authorization holder of vaccine product.                                                                        |
+| FIRST_VACCINE_DATE |  Date  |                                           Date of first vaccinations. Equivalent to start/launch date of the first vaccine administered in a country.                                            |
+| AUTHORIZATION_DATE |  Date  |                                                           Date vaccine product was authorised for use in the country, territory, area.                                                           |
+|     START_DATE     |  Date  |                                                Start/launch date of vaccination with vaccine type (excludes vaccinations during clinical trials).                                                |
+|      END_DATE      |  Date  |                                                                                   End date of vaccine rollout                                                                                    |
+|      COMMENT       | String |                                                                               Comments related to vaccine rollout                                                                                |
+|    DATA_SOURCE     | String | Indicates data source - REPORTING: Data reported by Member States, or sourced from official reports - OWID: Data sourced from Our World in Data: <https://ourworldindata.org/covid-vaccinations> |
 
 ```{r}
 vcc_meta <- read.csv(file = "./data/vaccination-metadata.csv")
 # Brief view of the data.
 head(vcc_meta)
 ```
+
 ```{r}
 # See the number of countries, territories, and areas.
 cat("The number of conuntries, territories, and areas recorded: ",length(unique(vcc_meta$ISO3)))
 ```
+
 ## Cleaning / transformation
+
 ```{r}
 library(lubridate)
-library(dplyr)
+library(tidyverse)
+library(redav)
 ```
 
 ```{r}
-daily_case$month = month(as.Date(daily_case$Date_reported))
-daily_case$year = year(as.Date(daily_case$Date_reported))
+daily_case$date = as.Date(daily_case$Date_reported)
 
-group_table = group_by(daily_case, year, month)
+month_case <- daily_case %>% 
+    group_by(WHO_region, Country_code, Country, month = lubridate::floor_date(date, 'month')) %>%
+    summarize(
+      New_cases = sum(New_cases),
+      New_deaths = sum(New_deaths),
+      Cumulative_cases = max(Cumulative_cases),
+      Cumulative_deaths = max(Cumulative_deaths),
+      
+    )
+
+write.csv(month_case, file = "./data/monthly_data.csv")
 ```
+
 ## Missing value analysis
+
 ```{r}
 daily_case_na = sum(is.na(daily_case))
 reccent_case_na = sum(is.na(reccent_case))
@@ -160,4 +176,22 @@ print(paste0("The number of missing values in daily reported and death data set:
 print(paste0("The number of missing values in reccent reported and death data set: ", reccent_case_na))
 print(paste0("The number of missing values in vaccination data set: ", vcc_na))
 print(paste0("The number of missing values in vaccination meat-data set: ", vcc_meta_na))
+```
+
+Basically, vaccination meta-data set has the most missing values.
+
+```{r}
+plot_missing(month_case, percent = FALSE)
+```
+
+```{r}
+plot_missing(reccent_case, percent = FALSE)
+```
+
+```{r}
+plot_missing(vcc, percent = FALSE)
+```
+
+```{r}
+plot_missing(vcc_meta, percent = FALSE)
 ```
