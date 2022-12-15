@@ -34,7 +34,7 @@ select.selectAll('option')
 
 
 
-const covidData = d3.csv('data/monthly_with_code.csv').then(function(data){
+const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_data_selfuse/main/monthly_with_code.csv').then(function(data){
 
 
   let filtered_data = data.filter(d=>d.month == "2020/1/1")

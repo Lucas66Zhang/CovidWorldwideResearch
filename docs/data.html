@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Data | COVID-19 Worldwide Research</title>
   <meta name="description" content="Chapter 3 Data | COVID-19 Worldwide Research" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Data | COVID-19 Worldwide Research" />
   <meta property="og:type" content="book" />
@@ -246,13 +246,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data.html#cb1-1" aria-hidden="true" tabindex="-1"></a>daily_case <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;./data/WHO-COVID-19-global-data.csv&quot;</span>)</span>
 <span id="cb1-2"><a href="data.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Brief view of the data.</span></span>
 <span id="cb1-3"><a href="data.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(daily_case)</span></code></pre></div>
-<pre><code>##   Date_reported Country_code     Country WHO_region New_cases Cumulative_cases New_deaths Cumulative_deaths
-## 1    2020-01-03           AF Afghanistan       EMRO         0                0          0                 0
-## 2    2020-01-04           AF Afghanistan       EMRO         0                0          0                 0
-## 3    2020-01-05           AF Afghanistan       EMRO         0                0          0                 0
-## 4    2020-01-06           AF Afghanistan       EMRO         0                0          0                 0
-## 5    2020-01-07           AF Afghanistan       EMRO         0                0          0                 0
-## 6    2020-01-08           AF Afghanistan       EMRO         0                0          0                 0</code></pre>
+<pre><code>##   Date_reported Country_code     Country WHO_region New_cases Cumulative_cases
+## 1    2020-01-03           AF Afghanistan       EMRO         0                0
+## 2    2020-01-04           AF Afghanistan       EMRO         0                0
+## 3    2020-01-05           AF Afghanistan       EMRO         0                0
+## 4    2020-01-06           AF Afghanistan       EMRO         0                0
+## 5    2020-01-07           AF Afghanistan       EMRO         0                0
+## 6    2020-01-08           AF Afghanistan       EMRO         0                0
+##   New_deaths Cumulative_deaths
+## 1          0                 0
+## 2          0                 0
+## 3          0                 0
+## 4          0                 0
+## 5          0                 0
+## 6          0                 0</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See the number of countries, territories, and areas.</span></span>
 <span id="cb3-2"><a href="data.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of conuntries, territories, and areas recorded: &quot;</span>,<span class="fu">length</span>(<span class="fu">unique</span>(daily_case<span class="sc">$</span>Country)))</span></code></pre></div>
 <pre><code>## The number of conuntries, territories, and areas recorded:  237</code></pre>
@@ -351,7 +358,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data.html#cb8-1" aria-hidden="true" tabindex="-1"></a>reccent_case <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;./data/WHO-COVID-19-global-table-data.csv&quot;</span>)</span>
 <span id="cb8-2"><a href="data.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Brief view of the data.</span></span>
 <span id="cb8-3"><a href="data.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reccent_case)</span></code></pre></div>
-
 <pre><code>##                                     Name WHO.Region Cases...cumulative.total
 ## Global                                    645630482                 8283.112
 ## United States of America        Americas   98072469                29628.907
@@ -359,13 +365,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## France                            Europe   37433359                57554.932
 ## Germany                           Europe   36812671                44263.709
 ## Brazil                          Americas   35577538                16737.691
-##                          Cases...cumulative.total.per.100000.population Cases...newly.reported.in.last.7.days
-## Global                                                          3261885                              41.84833
-## United States of America                                         448634                             135.53800
-## India                                                              1312                               0.09500
-## France                                                           434884                             668.64700
-## Germany                                                          190185                             228.67900
-## Brazil                                                           208433                              98.05900
+##                          Cases...cumulative.total.per.100000.population
+## Global                                                          3261885
+## United States of America                                         448634
+## India                                                              1312
+## France                                                           434884
+## Germany                                                          190185
+## Brazil                                                           208433
+##                          Cases...newly.reported.in.last.7.days
+## Global                                                41.84833
+## United States of America                             135.53800
+## India                                                  0.09500
+## France                                               668.64700
+## Germany                                              228.67900
+## Brazil                                                98.05900
 ##                          Cases...newly.reported.in.last.7.days.per.100000.population
 ## Global                                                                        192915
 ## United States of America                                                           0
@@ -373,20 +386,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## France                                                                         10878
 ## Germany                                                                        33590
 ## Brazil                                                                          6777
-##                          Cases...newly.reported.in.last.24.hours Deaths...cumulative.total
-## Global                                                   6634816                  85.12132
-## United States of America                                 1074367                 324.58000
-## India                                                     530658                  38.45300
-## France                                                    156247                 240.23500
-## Germany                                                   159177                 191.39500
-## Brazil                                                    690754                 324.97000
-##                          Deaths...cumulative.total.per.100000.population Deaths...newly.reported.in.last.7.days
-## Global                                                              9502                              0.1219058
-## United States of America                                            2934                              0.8860000
-## India                                                                 25                              0.0020000
-## France                                                               623                              0.9580000
-## Germany                                                              105                              0.1260000
-## Brazil                                                               630                              0.2960000
+##                          Cases...newly.reported.in.last.24.hours
+## Global                                                   6634816
+## United States of America                                 1074367
+## India                                                     530658
+## France                                                    156247
+## Germany                                                   159177
+## Brazil                                                    690754
+##                          Deaths...cumulative.total
+## Global                                    85.12132
+## United States of America                 324.58000
+## India                                     38.45300
+## France                                   240.23500
+## Germany                                  191.39500
+## Brazil                                   324.97000
+##                          Deaths...cumulative.total.per.100000.population
+## Global                                                              9502
+## United States of America                                            2934
+## India                                                                 25
+## France                                                               623
+## Germany                                                              105
+## Brazil                                                               630
+##                          Deaths...newly.reported.in.last.7.days
+## Global                                                0.1219058
+## United States of America                              0.8860000
+## India                                                 0.0020000
+## France                                                0.9580000
+## Germany                                               0.1260000
+## Brazil                                                0.2960000
 ##                          Deaths...newly.reported.in.last.7.days.per.100000.population
 ## Global                                                                            645
 ## United States of America                                                            0
@@ -508,20 +535,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data.html#cb12-1" aria-hidden="true" tabindex="-1"></a>vcc <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;./data/vaccination-data.csv&quot;</span>)</span>
 <span id="cb12-2"><a href="data.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Brief view of the data.</span></span>
 <span id="cb12-3"><a href="data.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(vcc)</span></code></pre></div>
-<pre><code>##          COUNTRY ISO3 WHO_REGION DATA_SOURCE DATE_UPDATED TOTAL_VACCINATIONS PERSONS_VACCINATED_1PLUS_DOSE
-## 1    Afghanistan  AFG       EMRO   REPORTING   2022-12-05           12304901                      11320910
-## 2        Albania  ALB       EURO   REPORTING   2022-11-27            3017443                       1341413
-## 3        Algeria  DZA       AFRO   REPORTING   2022-09-04           15267442                       7840131
-## 4 American Samoa  ASM       WPRO   REPORTING   2022-08-23             111316                         44885
-## 5        Andorra  AND       EURO   REPORTING   2022-11-13             154367                         57901
-## 6         Angola  AGO       AFRO   REPORTING   2022-12-04           23468138                      14887847
-##   TOTAL_VACCINATIONS_PER100 PERSONS_VACCINATED_1PLUS_DOSE_PER100 PERSONS_FULLY_VACCINATED
-## 1                    31.609                               29.081                 10615628
-## 2                   104.900                               47.134                  1269112
-## 3                    34.817                               17.879                  6481186
-## 4                   201.670                               81.318                    41423
-## 5                   199.800                               76.009                    53485
-## 6                    71.405                               45.298                  8193976
+<pre><code>##          COUNTRY ISO3 WHO_REGION DATA_SOURCE DATE_UPDATED TOTAL_VACCINATIONS
+## 1    Afghanistan  AFG       EMRO   REPORTING   2022-12-05           12304901
+## 2        Albania  ALB       EURO   REPORTING   2022-11-27            3017443
+## 3        Algeria  DZA       AFRO   REPORTING   2022-09-04           15267442
+## 4 American Samoa  ASM       WPRO   REPORTING   2022-08-23             111316
+## 5        Andorra  AND       EURO   REPORTING   2022-11-13             154367
+## 6         Angola  AGO       AFRO   REPORTING   2022-12-04           23468138
+##   PERSONS_VACCINATED_1PLUS_DOSE TOTAL_VACCINATIONS_PER100
+## 1                      11320910                    31.609
+## 2                       1341413                   104.900
+## 3                       7840131                    34.817
+## 4                         44885                   201.670
+## 5                         57901                   199.800
+## 6                      14887847                    71.405
+##   PERSONS_VACCINATED_1PLUS_DOSE_PER100 PERSONS_FULLY_VACCINATED
+## 1                               29.081                 10615628
+## 2                               47.134                  1269112
+## 3                               17.879                  6481186
+## 4                               81.318                    41423
+## 5                               76.009                    53485
+## 6                               45.298                  8193976
 ##   PERSONS_FULLY_VACCINATED_PER100
 ## 1                          27.270
 ## 2                          44.594
@@ -536,13 +570,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4                                                                                                                                                                                Janssen - Ad26.COV 2-S,Moderna - Spikevax,Pfizer BioNTech - Comirnaty
 ## 5                                                                                                                                                                               AstraZeneca - Vaxzevria,Moderna - Spikevax,Pfizer BioNTech - Comirnaty
 ## 6                                                                                                                                                                                                                                     SII - Covishield
-##   FIRST_VACCINE_DATE NUMBER_VACCINES_TYPES_USED PERSONS_BOOSTER_ADD_DOSE PERSONS_BOOSTER_ADD_DOSE_PER100
-## 1         2021-02-22                         11                       NA                              NA
-## 2         2021-01-13                          5                   373263                          13.116
-## 3         2021-01-30                          4                   575651                           1.313
-## 4         2020-12-21                          3                    24160                          43.770
-## 5         2021-01-20                          3                    42981                          56.423
-## 6         2021-03-10                          1                  1368465                           4.164</code></pre>
+##   FIRST_VACCINE_DATE NUMBER_VACCINES_TYPES_USED PERSONS_BOOSTER_ADD_DOSE
+## 1         2021-02-22                         11                       NA
+## 2         2021-01-13                          5                   373263
+## 3         2021-01-30                          4                   575651
+## 4         2020-12-21                          3                    24160
+## 5         2021-01-20                          3                    42981
+## 6         2021-03-10                          1                  1368465
+##   PERSONS_BOOSTER_ADD_DOSE_PER100
+## 1                              NA
+## 2                          13.116
+## 3                           1.313
+## 4                          43.770
+## 5                          56.423
+## 6                           4.164</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See the number of countries, territories, and areas.</span></span>
 <span id="cb14-2"><a href="data.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of conuntries, territories, and areas recorded: &quot;</span>,<span class="fu">length</span>(<span class="fu">unique</span>(vcc<span class="sc">$</span>COUNTRY)))</span></code></pre></div>
 <pre><code>## The number of conuntries, territories, and areas recorded:  229</code></pre>
@@ -620,20 +661,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data.html#cb16-1" aria-hidden="true" tabindex="-1"></a>vcc_meta <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;./data/vaccination-metadata.csv&quot;</span>)</span>
 <span id="cb16-2"><a href="data.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Brief view of the data.</span></span>
 <span id="cb16-3"><a href="data.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(vcc_meta)</span></code></pre></div>
-<pre><code>##   ISO3                VACCINE_NAME PRODUCT_NAME    COMPANY_NAME AUTHORIZATION_DATE START_DATE END_DATE COMMENT
-## 1  SHN       AstraZeneca - AZD1222      AZD1222     AstraZeneca                                     NA      NA
-## 2  GRL         Moderna - mRNA-1273    mRNA-1273         Moderna                                     NA      NA
-## 3  FRO         Moderna - mRNA-1273    mRNA-1273         Moderna                                     NA      NA
-## 4  FRO Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech                                     NA      NA
-## 5  BIH       AstraZeneca - AZD1222      AZD1222     AstraZeneca                                     NA      NA
-## 6  BIH Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech                                     NA      NA
-##   DATA_SOURCE
-## 1        OWID
-## 2        OWID
-## 3        OWID
-## 4        OWID
-## 5        OWID
-## 6        OWID</code></pre>
+<pre><code>##   ISO3                VACCINE_NAME PRODUCT_NAME    COMPANY_NAME
+## 1  SHN       AstraZeneca - AZD1222      AZD1222     AstraZeneca
+## 2  GRL         Moderna - mRNA-1273    mRNA-1273         Moderna
+## 3  FRO         Moderna - mRNA-1273    mRNA-1273         Moderna
+## 4  FRO Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech
+## 5  BIH       AstraZeneca - AZD1222      AZD1222     AstraZeneca
+## 6  BIH Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech
+##   AUTHORIZATION_DATE START_DATE END_DATE COMMENT DATA_SOURCE
+## 1                                     NA      NA        OWID
+## 2                                     NA      NA        OWID
+## 3                                     NA      NA        OWID
+## 4                                     NA      NA        OWID
+## 5                                     NA      NA        OWID
+## 6                                     NA      NA        OWID</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See the number of countries, territories, and areas.</span></span>
 <span id="cb18-2"><a href="data.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The number of conuntries, territories, and areas recorded: &quot;</span>,<span class="fu">length</span>(<span class="fu">unique</span>(vcc_meta<span class="sc">$</span>ISO3)))</span></code></pre></div>
 <pre><code>## The number of conuntries, territories, and areas recorded:  225</code></pre>
@@ -676,13 +717,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;The number of missing values in vaccination meat-data set: 2142&quot;</code></pre>
 <p>Basically, vaccination meta-data set has the most missing values.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_missing</span>(month_case, <span class="at">percent =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_missing</span>(reccent_case, <span class="at">percent =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_missing</span>(vcc, <span class="at">percent =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_missing</span>(vcc_meta, <span class="at">percent =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 
 </div>
 </div>
