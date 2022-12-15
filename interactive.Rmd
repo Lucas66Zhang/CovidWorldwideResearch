@@ -1,4 +1,6 @@
 # Interactive component
+
+
 <div id="plot"></div>
 <style>
 path {
@@ -8,34 +10,103 @@ path {
 }
 </style>
 
-<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3.v7.js"></script>
 <script src="https://unpkg.com/topojson@3"></script>
 <script>
-var width = 960,
-    height = 500;
+const width = 1000;
+const height = 500;
 
-var projection = d3.geoMercator()
-    .center([0, 5 ])
-    .scale(150)
-    .rotate([-180,0]);
+const form = d3.select('div#plot')
+  .append('form')
+  .attr('class', 'form-inline');
+const select = form.append('select')
+  .attr('class', 'form-control');
+const months = ['2020/1/1', '2020/2/1', '2020/3/1', '2020/4/1','2020/5/1','2020/6/1','2020/7/1','2020/8/1','2020/9/1','2020/10/1','2020/11/1','2020/12/1',
+  '2021/1/1','2021/2/1','2021/3/1','2021/4/1','2021/5/1','2021/6/1','2021/7/1','2021/8/1','2021/9/1','2021/10/1','2021/11/1','2021/12/1',
+  '2022/1/1','2022/2/1','2022/3/1','2022/4/1','2022/5/1','2022/6/1','2022/7/1','2022/8/1','2022/9/1','2022/10/1','2022/11/1','2022/12/1',
+];
+select.selectAll('option')
+  .data(months)
+  .enter()
+  .append('option')
+    .attr('value', d => d)
+    .text(d => d);
 
-var svg = d3.select("div#plot").append("svg")
-    .attr("width", width)
-    .attr("height", height);
 
-var path = d3.geoPath()
-    .projection(projection);
 
-var g = svg.append("g");
+const covidData = d3.csv('monthly_with_code.csv').then(function(data){
 
-// load and display the World
-d3.json("https://unpkg.com/world-atlas@1.1.4/world/110m.json").then(function(topology) {
 
-    g.selectAll("path")
-       .data(topojson.feature(topology, topology.objects.countries).features)
-       .enter().append("path")
-       .attr("d", path);
+  let filtered_data = data.filter(d=>d.month == "2020/1/1")
+  let colorScale = d3.scaleSequential(d3.interpolateReds)
+  .domain([0, d3.max(data, d => d.New_cases)]);
+  const projection = d3.geoMercator()
+      .center([0, 5 ])
+      .scale(150)
+      .rotate([-180,0]);
 
+  const svg = d3.select("div#plot")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+  const path = d3.geoPath()
+      .projection(projection);
+
+  const g = svg.append("g");
+  
+
+  // load and display the World
+  d3.json("https://unpkg.com/world-atlas@1.1.4/world/110m.json").then(function(topology) {
+
+      g.selectAll("path")
+        .data(topojson.feature(topology, topology.objects.countries).features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style('fill',d=>{
+          const countrydata = filtered_data.find(
+            country => Number(country.code) == Number(d.id) 
+          )
+          if (typeof(countrydata) == "undefined"){
+            return colorScale(0)
+          }
+          else{
+            return colorScale(countrydata.New_cases)
+          }
+          //return countryData ? colorScale(countryData.New_cases) : '#ccc';
+        })
+        .style('stroke', '#333');
+
+  });
+
+  select.on('change', () => {
+  // get the selected month
+  const month = d3.select('.form-control').node().value;
+
+  // update the data to only include cases for the selected month
+  filtered_data = data.filter(d=>d.month == month)
+
+  // update the color scale
+  // colorScale.domain = [0, d3.max(filteredData, d => d.New_cases)];
+  // console.log(filtered_data)
+  // update the colors on the map
+  svg.selectAll('path')
+  .transition()
+  .duration(100)
+  .style('fill', d => {
+  // find the corresponding data for this country
+  const countrydata = filtered_data.find(
+    country => Number(country.code) == Number(d.id) 
+  )
+  if (typeof(countrydata) == "undefined"){
+    return colorScale(0)
+  }
+  else{
+    return colorScale(countrydata.New_cases)
+  }
+  })
 });
 
+})
 </script>
