@@ -179,13 +179,20 @@
 </tr>
 </tbody>
 </table>
-<pre><code>##   Date_reported Country_code     Country WHO_region New_cases Cumulative_cases New_deaths Cumulative_deaths
-## 1    2020-01-03           AF Afghanistan       EMRO         0                0          0                 0
-## 2    2020-01-04           AF Afghanistan       EMRO         0                0          0                 0
-## 3    2020-01-05           AF Afghanistan       EMRO         0                0          0                 0
-## 4    2020-01-06           AF Afghanistan       EMRO         0                0          0                 0
-## 5    2020-01-07           AF Afghanistan       EMRO         0                0          0                 0
-## 6    2020-01-08           AF Afghanistan       EMRO         0                0          0                 0</code></pre>
+<pre><code>##   Date_reported Country_code     Country WHO_region New_cases Cumulative_cases
+## 1    2020-01-03           AF Afghanistan       EMRO         0                0
+## 2    2020-01-04           AF Afghanistan       EMRO         0                0
+## 3    2020-01-05           AF Afghanistan       EMRO         0                0
+## 4    2020-01-06           AF Afghanistan       EMRO         0                0
+## 5    2020-01-07           AF Afghanistan       EMRO         0                0
+## 6    2020-01-08           AF Afghanistan       EMRO         0                0
+##   New_deaths Cumulative_deaths
+## 1          0                 0
+## 2          0                 0
+## 3          0                 0
+## 4          0                 0
+## 5          0                 0
+## 6          0                 0</code></pre>
 <pre><code>## The number of conuntries, territories, and areas recorded:  237</code></pre>
 <pre><code>## [1] &quot;The last day of records: 2022-12-13&quot;</code></pre>
 <pre><code>## [1] &quot;The first day of records: 2020-01-03&quot;</code></pre>
@@ -276,34 +283,62 @@
 </tr>
 </tbody>
 </table>
-<pre><code>##                                     Name WHO.Region Cases...cumulative.total Cases...cumulative.total.per.100000.population
-## Global                                    645630482                 8283.112                                        3261885
-## United States of America        Americas   98072469                29628.907                                         448634
-## India                    South-East Asia   44675095                 3237.315                                           1312
-## France                            Europe   37433359                57554.932                                         434884
-## Germany                           Europe   36812671                44263.709                                         190185
-## Brazil                          Americas   35577538                16737.691                                         208433
-##                          Cases...newly.reported.in.last.7.days Cases...newly.reported.in.last.7.days.per.100000.population
-## Global                                                41.84833                                                      192915
-## United States of America                             135.53800                                                           0
-## India                                                  0.09500                                                         114
-## France                                               668.64700                                                       10878
-## Germany                                              228.67900                                                       33590
-## Brazil                                                98.05900                                                        6777
-##                          Cases...newly.reported.in.last.24.hours Deaths...cumulative.total
-## Global                                                   6634816                  85.12132
-## United States of America                                 1074367                 324.58000
-## India                                                     530658                  38.45300
-## France                                                    156247                 240.23500
-## Germany                                                   159177                 191.39500
-## Brazil                                                    690754                 324.97000
-##                          Deaths...cumulative.total.per.100000.population Deaths...newly.reported.in.last.7.days
-## Global                                                              9502                              0.1219058
-## United States of America                                            2934                              0.8860000
-## India                                                                 25                              0.0020000
-## France                                                               623                              0.9580000
-## Germany                                                              105                              0.1260000
-## Brazil                                                               630                              0.2960000
+<pre><code>##                                     Name WHO.Region Cases...cumulative.total
+## Global                                    645630482                 8283.112
+## United States of America        Americas   98072469                29628.907
+## India                    South-East Asia   44675095                 3237.315
+## France                            Europe   37433359                57554.932
+## Germany                           Europe   36812671                44263.709
+## Brazil                          Americas   35577538                16737.691
+##                          Cases...cumulative.total.per.100000.population
+## Global                                                          3261885
+## United States of America                                         448634
+## India                                                              1312
+## France                                                           434884
+## Germany                                                          190185
+## Brazil                                                           208433
+##                          Cases...newly.reported.in.last.7.days
+## Global                                                41.84833
+## United States of America                             135.53800
+## India                                                  0.09500
+## France                                               668.64700
+## Germany                                              228.67900
+## Brazil                                                98.05900
+##                          Cases...newly.reported.in.last.7.days.per.100000.population
+## Global                                                                        192915
+## United States of America                                                           0
+## India                                                                            114
+## France                                                                         10878
+## Germany                                                                        33590
+## Brazil                                                                          6777
+##                          Cases...newly.reported.in.last.24.hours
+## Global                                                   6634816
+## United States of America                                 1074367
+## India                                                     530658
+## France                                                    156247
+## Germany                                                   159177
+## Brazil                                                    690754
+##                          Deaths...cumulative.total
+## Global                                    85.12132
+## United States of America                 324.58000
+## India                                     38.45300
+## France                                   240.23500
+## Germany                                  191.39500
+## Brazil                                   324.97000
+##                          Deaths...cumulative.total.per.100000.population
+## Global                                                              9502
+## United States of America                                            2934
+## India                                                                 25
+## France                                                               623
+## Germany                                                              105
+## Brazil                                                               630
+##                          Deaths...newly.reported.in.last.7.days
+## Global                                                0.1219058
+## United States of America                              0.8860000
+## India                                                 0.0020000
+## France                                                0.9580000
+## Germany                                               0.1260000
+## Brazil                                                0.2960000
 ##                          Deaths...newly.reported.in.last.7.days.per.100000.population
 ## Global                                                                            645
 ## United States of America                                                            0
@@ -420,20 +455,34 @@
 </tr>
 </tbody>
 </table>
-<pre><code>##          COUNTRY ISO3 WHO_REGION DATA_SOURCE DATE_UPDATED TOTAL_VACCINATIONS PERSONS_VACCINATED_1PLUS_DOSE
-## 1    Afghanistan  AFG       EMRO   REPORTING   2022-12-05           12304901                      11320910
-## 2        Albania  ALB       EURO   REPORTING   2022-11-27            3017443                       1341413
-## 3        Algeria  DZA       AFRO   REPORTING   2022-09-04           15267442                       7840131
-## 4 American Samoa  ASM       WPRO   REPORTING   2022-08-23             111316                         44885
-## 5        Andorra  AND       EURO   REPORTING   2022-11-13             154367                         57901
-## 6         Angola  AGO       AFRO   REPORTING   2022-12-04           23468138                      14887847
-##   TOTAL_VACCINATIONS_PER100 PERSONS_VACCINATED_1PLUS_DOSE_PER100 PERSONS_FULLY_VACCINATED PERSONS_FULLY_VACCINATED_PER100
-## 1                    31.609                               29.081                 10615628                          27.270
-## 2                   104.900                               47.134                  1269112                          44.594
-## 3                    34.817                               17.879                  6481186                          14.780
-## 4                   201.670                               81.318                    41423                          75.046
-## 5                   199.800                               76.009                    53485                          70.211
-## 6                    71.405                               45.298                  8193976                          24.931
+<pre><code>##          COUNTRY ISO3 WHO_REGION DATA_SOURCE DATE_UPDATED TOTAL_VACCINATIONS
+## 1    Afghanistan  AFG       EMRO   REPORTING   2022-12-05           12304901
+## 2        Albania  ALB       EURO   REPORTING   2022-11-27            3017443
+## 3        Algeria  DZA       AFRO   REPORTING   2022-09-04           15267442
+## 4 American Samoa  ASM       WPRO   REPORTING   2022-08-23             111316
+## 5        Andorra  AND       EURO   REPORTING   2022-11-13             154367
+## 6         Angola  AGO       AFRO   REPORTING   2022-12-04           23468138
+##   PERSONS_VACCINATED_1PLUS_DOSE TOTAL_VACCINATIONS_PER100
+## 1                      11320910                    31.609
+## 2                       1341413                   104.900
+## 3                       7840131                    34.817
+## 4                         44885                   201.670
+## 5                         57901                   199.800
+## 6                      14887847                    71.405
+##   PERSONS_VACCINATED_1PLUS_DOSE_PER100 PERSONS_FULLY_VACCINATED
+## 1                               29.081                 10615628
+## 2                               47.134                  1269112
+## 3                               17.879                  6481186
+## 4                               81.318                    41423
+## 5                               76.009                    53485
+## 6                               45.298                  8193976
+##   PERSONS_FULLY_VACCINATED_PER100
+## 1                          27.270
+## 2                          44.594
+## 3                          14.780
+## 4                          75.046
+## 5                          70.211
+## 6                          24.931
 ##                                                                                                                                                                                                                                          VACCINES_USED
 ## 1 AstraZeneca - Vaxzevria,Beijing CNBG - BBIBP-CorV,Bharat - Covaxin,CanSino - Convidecia,Gamaleya - Gam-Covid-Vac,Gamaleya - Sputnik-Light,Janssen - Ad26.COV 2-S,Moderna - Spikevax,Pfizer BioNTech - Comirnaty,SII - Covishield,Sinovac - CoronaVac
 ## 2                                                                                                                                    AstraZeneca - Vaxzevria,Gamaleya - Gam-Covid-Vac,Pfizer BioNTech - Comirnaty,SII - Covishield,Sinovac - CoronaVac
@@ -441,13 +490,20 @@
 ## 4                                                                                                                                                                                Janssen - Ad26.COV 2-S,Moderna - Spikevax,Pfizer BioNTech - Comirnaty
 ## 5                                                                                                                                                                               AstraZeneca - Vaxzevria,Moderna - Spikevax,Pfizer BioNTech - Comirnaty
 ## 6                                                                                                                                                                                                                                     SII - Covishield
-##   FIRST_VACCINE_DATE NUMBER_VACCINES_TYPES_USED PERSONS_BOOSTER_ADD_DOSE PERSONS_BOOSTER_ADD_DOSE_PER100
-## 1         2021-02-22                         11                       NA                              NA
-## 2         2021-01-13                          5                   373263                          13.116
-## 3         2021-01-30                          4                   575651                           1.313
-## 4         2020-12-21                          3                    24160                          43.770
-## 5         2021-01-20                          3                    42981                          56.423
-## 6         2021-03-10                          1                  1368465                           4.164</code></pre>
+##   FIRST_VACCINE_DATE NUMBER_VACCINES_TYPES_USED PERSONS_BOOSTER_ADD_DOSE
+## 1         2021-02-22                         11                       NA
+## 2         2021-01-13                          5                   373263
+## 3         2021-01-30                          4                   575651
+## 4         2020-12-21                          3                    24160
+## 5         2021-01-20                          3                    42981
+## 6         2021-03-10                          1                  1368465
+##   PERSONS_BOOSTER_ADD_DOSE_PER100
+## 1                              NA
+## 2                          13.116
+## 3                           1.313
+## 4                          43.770
+## 5                          56.423
+## 6                           4.164</code></pre>
 <pre><code>## The number of conuntries, territories, and areas recorded:  229</code></pre>
 <p>The number of countries, territories, and areas is less than the total number of members of WHO, which means that some places still lack vaccine.</p>
 </div>
@@ -520,13 +576,20 @@
 </tr>
 </tbody>
 </table>
-<pre><code>##   ISO3                VACCINE_NAME PRODUCT_NAME    COMPANY_NAME AUTHORIZATION_DATE START_DATE END_DATE COMMENT DATA_SOURCE
-## 1  SHN       AstraZeneca - AZD1222      AZD1222     AstraZeneca                                     NA      NA        OWID
-## 2  GRL         Moderna - mRNA-1273    mRNA-1273         Moderna                                     NA      NA        OWID
-## 3  FRO         Moderna - mRNA-1273    mRNA-1273         Moderna                                     NA      NA        OWID
-## 4  FRO Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech                                     NA      NA        OWID
-## 5  BIH       AstraZeneca - AZD1222      AZD1222     AstraZeneca                                     NA      NA        OWID
-## 6  BIH Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech                                     NA      NA        OWID</code></pre>
+<pre><code>##   ISO3                VACCINE_NAME PRODUCT_NAME    COMPANY_NAME
+## 1  SHN       AstraZeneca - AZD1222      AZD1222     AstraZeneca
+## 2  GRL         Moderna - mRNA-1273    mRNA-1273         Moderna
+## 3  FRO         Moderna - mRNA-1273    mRNA-1273         Moderna
+## 4  FRO Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech
+## 5  BIH       AstraZeneca - AZD1222      AZD1222     AstraZeneca
+## 6  BIH Pfizer BioNTech - Comirnaty    Comirnaty Pfizer BioNTech
+##   AUTHORIZATION_DATE START_DATE END_DATE COMMENT DATA_SOURCE
+## 1                                     NA      NA        OWID
+## 2                                     NA      NA        OWID
+## 3                                     NA      NA        OWID
+## 4                                     NA      NA        OWID
+## 5                                     NA      NA        OWID
+## 6                                     NA      NA        OWID</code></pre>
 <pre><code>## The number of conuntries, territories, and areas recorded:  225</code></pre>
 </div>
 </div>
