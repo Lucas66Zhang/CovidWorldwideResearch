@@ -1,0 +1,97 @@
+<script src="https://d3js.org/d3.v7.js"></script>
+
+<div id="plot"></div>
+
+<script>
+// set the dimensions and margins of the map
+const width = 960;
+const height = 600;
+const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+
+// load the data
+const covidData = d3.csv('covid_cases_by_country.csv');
+
+// set up the color scale
+const colorScale = d3.scaleSequential(d3.interpolateReds)
+  .domain([0, d3.max(covidData, d => d.cases)]);
+
+// append the svg object to the body of the page
+const svg = d3.select('div#plot')
+  .append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+// load and display the world map
+d3.json('https://unpkg.com/world-atlas@1/world/110m.json').then(data => {
+  // create a new geography projection
+  const projection = d3.geoMercator()
+    .fitSize([width, height], data);
+
+  // create a new path generator using the projection
+  const path = d3.geoPath()
+    .projection(projection);
+
+  // add the path for each country to the svg
+  svg.selectAll('path')
+    .data(data.features)
+    .enter()
+    .append('path')
+      .attr('d', path)
+      .style('fill', d => {
+        // find the corresponding data for this country
+        const countryData = covidData.find(
+          country => country.name === d.properties.name
+        );
+
+        // return the color for this country
+        return countryData ? colorScale(countryData.cases) : '#ccc';
+      })
+      .style('stroke', '#333');
+});
+
+// create a form to select the month
+const form = d3.select('body')
+  .append('form')
+  .attr('class', 'form-inline');
+
+// create a select element for the month
+const select = form.append('select')
+  .attr('class', 'form-control');
+
+// create options for each month
+const months = ['January', 'February', 'March', 'April',];
+select.selectAll('option')
+  .data(months)
+  .enter()
+  .append('option')
+    .attr('value', d => d)
+    .text(d => d);
+
+// update the map when the month is changed
+select.on('change', () => {
+  // get the selected month
+  const month = d3.select('.form-control').node().value;
+
+  // update the data to only include cases for the selected month
+  const filteredData = covidData.filter(d => d.month === month);
+
+  // update the color scale
+  colorScale.domain([0, d3.max(filteredData, d => d.cases)]);
+
+  // update the colors on the map
+  svg.selectAll('path')
+  .transition()
+  .duration(500)
+  .style('fill', d => {
+  // find the corresponding data for this country
+  const countryData = filteredData.find(
+  country => country.name === d.properties.name
+  );
+  
+  // return the color for this country
+  return countryData ? colorScale(countryData.cases) : '#ccc';
+});
+
+</script>
