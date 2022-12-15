@@ -1,6 +1,6 @@
 --- 
 title: "COVID-19 Worldwide Research"
-author: "Sida Huang"
+author: "Sida Huang; Longxiang Zhang; Chun-Mo Hsieh"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
