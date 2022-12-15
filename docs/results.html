@@ -20,7 +20,7 @@
   
   
 
-<meta name="author" content="Names" />
+<meta name="author" content="Sida Huang" />
 
 
 <meta name="date" content="2022-12-15" />
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">COVID-19 Worldwide Research</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
@@ -157,15 +157,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#cleaning-transformation"><i class="fa fa-check"></i><b>3.2</b> Cleaning / transformation</a></li>
 <li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#missing-value-analysis"><i class="fa fa-check"></i><b>3.3</b> Missing value analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a></li>
+<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="results.html"><a href="results.html#abstract"><i class="fa fa-check"></i><b>4.1</b> Abstract</a></li>
+<li class="chapter" data-level="4.2" data-path="results.html"><a href="results.html#a-brief-look-at-the-spread-of-covid-19-and-vaccinations"><i class="fa fa-check"></i><b>4.2</b> A brief look at the spread of Covid-19 and Vaccinations</a></li>
+<li class="chapter" data-level="4.3" data-path="results.html"><a href="results.html#do-vaccinations-really-work"><i class="fa fa-check"></i><b>4.3</b> Do vaccinations really work?</a></li>
+<li class="chapter" data-level="4.4" data-path="results.html"><a href="results.html#dive-into-vaccinations"><i class="fa fa-check"></i><b>4.4</b> Dive into Vaccinations</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>5</b> Interactive component</a></li>
 <li class="chapter" data-level="6" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="conclusion.html"><a href="conclusion.html#conclusion-from-result-part"><i class="fa fa-check"></i><b>6.1</b> Conclusion from Result Part</a></li>
-<li class="chapter" data-level="6.2" data-path="conclusion.html"><a href="conclusion.html#conclusion-from-interactive-part"><i class="fa fa-check"></i><b>6.2</b> Conclusion from Interactive Part</a></li>
-<li class="chapter" data-level="6.3" data-path="conclusion.html"><a href="conclusion.html#limitations"><i class="fa fa-check"></i><b>6.3</b> Limitations</a></li>
-<li class="chapter" data-level="6.4" data-path="conclusion.html"><a href="conclusion.html#future-directions"><i class="fa fa-check"></i><b>6.4</b> Future directions</a></li>
-<li class="chapter" data-level="6.5" data-path="conclusion.html"><a href="conclusion.html#lesson-learns"><i class="fa fa-check"></i><b>6.5</b> Lesson learns</a></li>
+<li class="chapter" data-level="6.1" data-path="conclusion.html"><a href="conclusion.html#conclusion-1"><i class="fa fa-check"></i><b>6.1</b> Conclusion</a></li>
+<li class="chapter" data-level="6.2" data-path="conclusion.html"><a href="conclusion.html#limitations"><i class="fa fa-check"></i><b>6.2</b> Limitations</a></li>
+<li class="chapter" data-level="6.3" data-path="conclusion.html"><a href="conclusion.html#future-directions"><i class="fa fa-check"></i><b>6.3</b> Future directions</a></li>
+<li class="chapter" data-level="6.4" data-path="conclusion.html"><a href="conclusion.html#lesson-learns"><i class="fa fa-check"></i><b>6.4</b> Lesson learns</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -188,7 +193,310 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="results" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Results<a href="results.html#results" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="abstract" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Abstract<a href="results.html#abstract" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this chapter, we use exploration data analysis to answer the questions that we proposed in the proposal chapter. This chapter is divided into three parts.</p>
+<p>In the first part we apply line plot, treemap, and Cleveland dot plot to brief visualize the spread and death cases of Covid-19. We find that at this stage of omicron variant of Covid-19, it is difficult and no efficient to completely prevent the spread of it. Thus, we have to learn how to live with Covid-19. Meanwhile, some areas still lack vaccines.</p>
+<p>In the second part, we use mosiac plot and split bar chart to determine whether vaccinations can prevent the spread of Covid-19. It is astonishing that vaccines do not work in preventing the spread of Covid-19. Fortunately, our result shows that vaccines do reduce the death rate in all regions.</p>
+<p>In the last part, we dive into vaccination details by scatter plot and box plot. The result shows that we’d better be fully vaccinated and even be vaccinated with a booster.</p>
+</div>
+<div id="a-brief-look-at-the-spread-of-covid-19-and-vaccinations" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> A brief look at the spread of Covid-19 and Vaccinations<a href="results.html#a-brief-look-at-the-spread-of-covid-19-and-vaccinations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, we use line plot to visualize the monthly new reported and cumulative cases and deaths group by <code>WHO_region</code>.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="results.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># trend of different region</span></span>
+<span id="cb30-2"><a href="results.html#cb30-2" aria-hidden="true" tabindex="-1"></a>month_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/monthly_data.csv&quot;</span>)</span>
+<span id="cb30-3"><a href="results.html#cb30-3" aria-hidden="true" tabindex="-1"></a>temp_df <span class="ot">&lt;-</span> month_df <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="results.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(WHO_region, month) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-5"><a href="results.html#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb30-6"><a href="results.html#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">New_cases =</span> <span class="fu">sum</span>(New_cases),</span>
+<span id="cb30-7"><a href="results.html#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">New_deaths =</span> <span class="fu">sum</span>(New_deaths),</span>
+<span id="cb30-8"><a href="results.html#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Cumulative_cases =</span> <span class="fu">max</span>(Cumulative_cases),</span>
+<span id="cb30-9"><a href="results.html#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Cumulative_deaths =</span> <span class="fu">max</span>(Cumulative_deaths),</span>
+<span id="cb30-10"><a href="results.html#cb30-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="results.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(temp_df, <span class="fu">aes</span>(<span class="at">x=</span>month, <span class="at">y=</span>New_cases, <span class="at">group =</span> WHO_region, <span class="at">color =</span> WHO_region)) <span class="sc">+</span> <span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">&quot;Monthly Cases Reported&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="results.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(temp_df, <span class="fu">aes</span>(<span class="at">x=</span>month, <span class="at">y=</span>Cumulative_cases, <span class="at">group =</span> WHO_region, <span class="at">color =</span> WHO_region)) <span class="sc">+</span> <span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">&quot;Cumulative cases Every Month&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Although there is no clear pattern in the number of new cases reported per WHO_region during the first two years of covid-19 spread, there is a clear spike in new cases in economically active and populous regions around December 2021. At this time it was the omicron variant that became the dominant virus, and it was difficult for humans to completely prevent this virus from spreading. Evidence of this is that areas with relatively conservative epidemic prevention policies (WPRO) have also seen a surge in cases.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="results.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(temp_df, <span class="fu">aes</span>(<span class="at">x=</span>month, <span class="at">y=</span>New_deaths, <span class="at">group =</span> WHO_region, <span class="at">color =</span> WHO_region)) <span class="sc">+</span> <span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">&quot;Monthly &quot;</span>)<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">&quot;Monthly Deaths Reported&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="results.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(temp_df, <span class="fu">aes</span>(<span class="at">x=</span>month, <span class="at">y=</span>Cumulative_deaths, <span class="at">group =</span> WHO_region, <span class="at">color =</span> WHO_region)) <span class="sc">+</span> <span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">&quot;Cumulative Deaths Every Month&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>For a considerable period of time, two regions with relative lax policy about covid-19 led the world in the number of new deaths, while deaths in regions with more conservative epidemic prevention policies were kept at a consistently low level, suggesting that early isolation of infected populations does help to control the death toll. However, starting in 2022, the number of new deaths in each region reaches a lower range, suggesting that the “early detection, early isolation” is no longer a significant efficient method for new variants of the virus.</p>
+<p>Next, we show the cumulative cases of each countries, territories, and areas until 2022-12-13 with the help of Cleveland dot plot, and group them by <code>WHO_region</code>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="results.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the cumulative cases of the last day in the dataset </span></span>
+<span id="cb35-2"><a href="results.html#cb35-2" aria-hidden="true" tabindex="-1"></a>daily_last <span class="ot">=</span> daily_case[daily_case<span class="sc">$</span>Date_reported <span class="sc">==</span> <span class="st">&quot;2022-12-13&quot;</span>,]</span>
+<span id="cb35-3"><a href="results.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="results.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(daily_last, <span class="fu">aes</span>(<span class="at">x =</span> Cumulative_cases, <span class="at">y =</span> <span class="fu">reorder</span>(Country, Cumulative_cases))) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="results.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-6"><a href="results.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(WHO_region <span class="sc">~</span> ., <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-7"><a href="results.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&#39;Cumulative Cases in All Countries, Territories, and Areas&#39;</span>) <span class="sc">+</span></span>
+<span id="cb35-8"><a href="results.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Countries, Territories, and Areas&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-9"><a href="results.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&#39;Number of Cumulative Cases&#39;</span>) <span class="sc">+</span></span>
+<span id="cb35-10"><a href="results.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_linedraw</span>() <span class="sc">+</span></span>
+<span id="cb35-11"><a href="results.html#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(), <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-27-1.png" width="768" /></p>
+<p>According to the Cleveland dot plot, Covid-19 seems prefer areas with high level of development in each WHO region, such as Republic of Korea and Japan in WPRO, France and Germany in EURO, South Africa in AFRO, etc.. This is because highly developed regions mean more intensive movement and communications of people and are more suitable for the spread of infectious diseases.</p>
+<p>Next, we want to dig deep into how death rate varies around the globe. Also, we want to include the infected population as one of the axis for better visualization on Covid-19 data.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="results.html#cb36-1" aria-hidden="true" tabindex="-1"></a>    cases_country <span class="ot">=</span> daily_case[daily_case<span class="sc">$</span>Date_reported <span class="sc">==</span> <span class="st">&quot;2022-12-13&quot;</span>, ]</span>
+<span id="cb36-2"><a href="results.html#cb36-2" aria-hidden="true" tabindex="-1"></a>    cases_country<span class="sc">$</span>death_rate <span class="ot">=</span> cases_country<span class="sc">$</span>Cumulative_deaths <span class="sc">/</span>cases_country<span class="sc">$</span>Cumulative_cases</span>
+<span id="cb36-3"><a href="results.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="results.html#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(treemap)</span>
+<span id="cb36-5"><a href="results.html#cb36-5" aria-hidden="true" tabindex="-1"></a>    treemap<span class="sc">::</span><span class="fu">treemap</span>(cases_country,</span>
+<span id="cb36-6"><a href="results.html#cb36-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">index=</span><span class="fu">c</span>(<span class="st">&quot;WHO_region&quot;</span>, <span class="st">&quot;ISO3&quot;</span>),</span>
+<span id="cb36-7"><a href="results.html#cb36-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">vSize=</span><span class="st">&quot;Cumulative_cases&quot;</span>,</span>
+<span id="cb36-8"><a href="results.html#cb36-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">vColor=</span><span class="st">&quot;death_rate&quot;</span>,</span>
+<span id="cb36-9"><a href="results.html#cb36-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">&quot;value&quot;</span>,</span>
+<span id="cb36-10"><a href="results.html#cb36-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">palette=</span><span class="st">&quot;RdYlBu&quot;</span>,</span>
+<span id="cb36-11"><a href="results.html#cb36-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">format.legend =</span> <span class="fu">list</span>(<span class="at">scientific =</span> <span class="cn">FALSE</span>, <span class="at">big.mark =</span> <span class="st">&quot; &quot;</span>))</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>The above treemap exhibits how death rates vary around the globe and include the infected population as one of the measurement. The countries are divided into six regions and packed into rectangles for better comparison among each region. The filled color represents how much is the death rate of each country since the start of Covid-19. We use diverging spectrum for presenting color for the sake of better glimpse of countries on the two extreme which high death rates or low ones. Also, we use yellow and blue for the two extremes since they are complementary color which are stronger enough for comparison for most people. As we can see from the map, Europe and Americas accounts for the major parts of infected population. Also, we can see how the death rate inequality happens in the region. For example, in Americas, Mexico, Peru and Ecuador has high death rates over 10 percentages while the majority of countries in Americas has death rate less than 3%. Likewise, we can see the similar inequality in Eastern Mediterranean and Europe. Last but not least, since that the infected population varies largely depends on the countries’ population. For those coutry with less population, it is highly likely that they would not be shown clearly on this graph. For example, Yemen has death rate up to 18 percentages but since its population (both national and infected ones) is much smaller than other countries, it cannot be shown clearly in treemap. In sum, this treemap give us a great summarization of how the death rates vary across country on the aspect of infected population but it also neglect those small countries in desperate needs of further aids in Covid-19 crises.</p>
+<p>Last, we reuse the Cleveland dot plot to show the vaccination status in different regions.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="results.html#cb37-1" aria-hidden="true" tabindex="-1"></a>vcc[vcc<span class="sc">$</span>WHO_REGION <span class="sc">!=</span> <span class="st">&quot;OTHER&quot;</span>,] <span class="sc">%&gt;%</span> </span>
+<span id="cb37-2"><a href="results.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(COUNTRY,</span>
+<span id="cb37-3"><a href="results.html#cb37-3" aria-hidden="true" tabindex="-1"></a>         WHO_REGION,</span>
+<span id="cb37-4"><a href="results.html#cb37-4" aria-hidden="true" tabindex="-1"></a>         TOTAL_VACCINATIONS_PER100,</span>
+<span id="cb37-5"><a href="results.html#cb37-5" aria-hidden="true" tabindex="-1"></a>         PERSONS_VACCINATED_1PLUS_DOSE_PER100,</span>
+<span id="cb37-6"><a href="results.html#cb37-6" aria-hidden="true" tabindex="-1"></a>         PERSONS_FULLY_VACCINATED_PER100,</span>
+<span id="cb37-7"><a href="results.html#cb37-7" aria-hidden="true" tabindex="-1"></a>         PERSONS_BOOSTER_ADD_DOSE_PER100</span>
+<span id="cb37-8"><a href="results.html#cb37-8" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-9"><a href="results.html#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;type&quot;</span>, </span>
+<span id="cb37-10"><a href="results.html#cb37-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">value =</span> <span class="st">&quot;percentage&quot;</span>,</span>
+<span id="cb37-11"><a href="results.html#cb37-11" aria-hidden="true" tabindex="-1"></a>         TOTAL_VACCINATIONS_PER100,</span>
+<span id="cb37-12"><a href="results.html#cb37-12" aria-hidden="true" tabindex="-1"></a>         PERSONS_VACCINATED_1PLUS_DOSE_PER100,</span>
+<span id="cb37-13"><a href="results.html#cb37-13" aria-hidden="true" tabindex="-1"></a>         PERSONS_FULLY_VACCINATED_PER100,</span>
+<span id="cb37-14"><a href="results.html#cb37-14" aria-hidden="true" tabindex="-1"></a>         PERSONS_BOOSTER_ADD_DOSE_PER100) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-15"><a href="results.html#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> percentage, <span class="at">y =</span> <span class="fu">reorder</span>(COUNTRY, <span class="at">type =</span> <span class="st">&quot;TOTAL_VACCINATIONS_PER1OO&quot;</span>, percentage, <span class="at">.desc=</span><span class="cn">FALSE</span>), <span class="at">color =</span> type)) <span class="sc">+</span> </span>
+<span id="cb37-16"><a href="results.html#cb37-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(WHO_REGION<span class="sc">~</span>., <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb37-17"><a href="results.html#cb37-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb37-18"><a href="results.html#cb37-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Vaccinations in Different WHO_region&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb37-19"><a href="results.html#cb37-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Countries, Territories, and Areas&quot;</span>) <span class="sc">+</span></span>
+<span id="cb37-20"><a href="results.html#cb37-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Percentage&quot;</span>)</span>
+<span id="cb37-21"><a href="results.html#cb37-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Spectral&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-29-1.png" width="960" /></p>
+<pre><code>## &lt;ggproto object: Class ScaleDiscrete, Scale, gg&gt;
+##     aesthetics: fill
+##     axis_order: function
+##     break_info: function
+##     break_positions: function
+##     breaks: waiver
+##     call: call
+##     clone: function
+##     dimension: function
+##     drop: TRUE
+##     expand: waiver
+##     get_breaks: function
+##     get_breaks_minor: function
+##     get_labels: function
+##     get_limits: function
+##     guide: legend
+##     is_discrete: function
+##     is_empty: function
+##     labels: waiver
+##     limits: NULL
+##     make_sec_title: function
+##     make_title: function
+##     map: function
+##     map_df: function
+##     n.breaks.cache: NULL
+##     na.translate: TRUE
+##     na.value: NA
+##     name: waiver
+##     palette: function
+##     palette.cache: NULL
+##     position: left
+##     range: &lt;ggproto object: Class RangeDiscrete, Range, gg&gt;
+##         range: NULL
+##         reset: function
+##         train: function
+##         super:  &lt;ggproto object: Class RangeDiscrete, Range, gg&gt;
+##     rescale: function
+##     reset: function
+##     scale_name: brewer
+##     train: function
+##     train_df: function
+##     transform: function
+##     transform_df: function
+##     super:  &lt;ggproto object: Class ScaleDiscrete, Scale, gg&gt;</code></pre>
+<p>Despite the fact that 3 years have passed since covid-19 was first identified, the majority of countries in all WHO regions still have fewer vaccinations than their total population, suggesting that there is still a shortage of vaccines all over the world. Meanwhile, there is a degree of inequity in the distribution of the vaccine for there are huge differences in vaccination status in each countries of the same WHO regions. In addition, African countries have the greatest vaccine shortage across all regions, with only six countries having more vaccinations than the total population.</p>
+</div>
+<div id="do-vaccinations-really-work" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Do vaccinations really work?<a href="results.html#do-vaccinations-really-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, we use vaccination-metadata.csv to get the vaccination starting date. If there are several starting date of a nation, we use the earliest date as the representative of the vaccination’s starting date of that nation since we do not have how the exact vaccination policies implement for each nation. In the meantime, since that we do not have how long will human bodies’ begin to work against Covid-19 after vaccination for each type of vaccine, we simply take the vaccination start date as the start date for immune system take effects. The reason that behind our decision is that, in most countries around the world, specialists and governments has propagated that people who received vaccines should stay at home and take good rests for few days in order not to suffer from severe side effects which makes them not exposed to virus and with low chances to be infected. Hence, we can use the vaccination start date to approximate the start date for immune system take effects.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="results.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb39-2"><a href="results.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb39-3"><a href="results.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Data 1: WHO-COVID-19-global-data.csv</span></span>
+<span id="cb39-4"><a href="results.html#cb39-4" aria-hidden="true" tabindex="-1"></a>daily_case <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;./data/WHO-COVID-19-global-data.csv&quot;</span>)</span>
+<span id="cb39-5"><a href="results.html#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="results.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Change country code to ISO3</span></span>
+<span id="cb39-7"><a href="results.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(countrycode)</span>
+<span id="cb39-8"><a href="results.html#cb39-8" aria-hidden="true" tabindex="-1"></a>daily_case<span class="sc">$</span>ISO3 <span class="ot">=</span> <span class="fu">countryname</span>(daily_case<span class="sc">$</span>Country, <span class="at">destination =</span> <span class="st">&#39;iso3c&#39;</span>)</span>
+<span id="cb39-9"><a href="results.html#cb39-9" aria-hidden="true" tabindex="-1"></a>daily_case<span class="sc">$</span>Date_reported <span class="ot">=</span> <span class="fu">as.Date</span>(daily_case<span class="sc">$</span>Date_reported)</span>
+<span id="cb39-10"><a href="results.html#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="results.html#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Data 2: vaccination-metadata.csv</span></span>
+<span id="cb39-12"><a href="results.html#cb39-12" aria-hidden="true" tabindex="-1"></a>vac_metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;./data/vaccination-metadata.csv&quot;</span>)</span>
+<span id="cb39-13"><a href="results.html#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="results.html#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only before and after</span></span>
+<span id="cb39-15"><a href="results.html#cb39-15" aria-hidden="true" tabindex="-1"></a>vac_metadata <span class="ot">&lt;-</span> vac_metadata[vac_metadata<span class="sc">$</span>START_DATE <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, ]</span>
+<span id="cb39-16"><a href="results.html#cb39-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-17"><a href="results.html#cb39-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Get vaccination EARLIEST start date for each country</span></span>
+<span id="cb39-18"><a href="results.html#cb39-18" aria-hidden="true" tabindex="-1"></a>vac_start <span class="ot">=</span> vac_metadata <span class="sc">%&gt;%</span></span>
+<span id="cb39-19"><a href="results.html#cb39-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(ISO3) <span class="sc">%&gt;%</span></span>
+<span id="cb39-20"><a href="results.html#cb39-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">START_DATE =</span> <span class="fu">min</span>(START_DATE))</span>
+<span id="cb39-21"><a href="results.html#cb39-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-22"><a href="results.html#cb39-22" aria-hidden="true" tabindex="-1"></a>vac_start<span class="sc">$</span>START_DATE <span class="ot">=</span> <span class="fu">as.Date</span>(vac_start<span class="sc">$</span>START_DATE)</span>
+<span id="cb39-23"><a href="results.html#cb39-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-24"><a href="results.html#cb39-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge two df</span></span>
+<span id="cb39-25"><a href="results.html#cb39-25" aria-hidden="true" tabindex="-1"></a>daily_case <span class="ot">&lt;-</span> <span class="fu">merge</span>(daily_case, vac_start, <span class="at">by=</span><span class="st">&quot;ISO3&quot;</span>)</span></code></pre></div>
+<p>Second, we use data/WHO-COVID-19-global-data.csv to calculate cumulative death cases before and after the vaccination start date for each country. Then, we can group by regions and generate the tidy data with each row containing region, vaccination indicator, case (alive or dead), and the count for case.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="results.html#cb40-1" aria-hidden="true" tabindex="-1"></a>tmp1 <span class="ot">&lt;-</span> daily_case <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="results.html#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(WHO_region) <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="results.html#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(</span>
+<span id="cb40-4"><a href="results.html#cb40-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">death_bf_vac =</span> <span class="fu">sum</span>(New_deaths[Date_reported <span class="sc">&lt;</span> START_DATE]), </span>
+<span id="cb40-5"><a href="results.html#cb40-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">live_bf_vac =</span> <span class="fu">sum</span>(New_cases[Date_reported <span class="sc">&lt;</span> START_DATE]) <span class="sc">-</span> <span class="fu">sum</span>(New_deaths[Date_reported <span class="sc">&lt;</span> START_DATE]), </span>
+<span id="cb40-6"><a href="results.html#cb40-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">death_af_vac =</span> <span class="fu">sum</span>(New_deaths[Date_reported <span class="sc">&gt;=</span> START_DATE]), </span>
+<span id="cb40-7"><a href="results.html#cb40-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">live_af_vac =</span> <span class="fu">sum</span>(New_cases[Date_reported <span class="sc">&gt;=</span> START_DATE]) <span class="sc">-</span> <span class="fu">sum</span>(New_deaths[Date_reported <span class="sc">&gt;=</span> START_DATE]), </span>
+<span id="cb40-8"><a href="results.html#cb40-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb40-9"><a href="results.html#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="results.html#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="co"># TIDYDATA: REGION(cat) | VAC(cat) | CASE(cat) | COUNT(num)</span></span>
+<span id="cb40-11"><a href="results.html#cb40-11" aria-hidden="true" tabindex="-1"></a>tidy <span class="ot">&lt;-</span> tmp1 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">!</span>WHO_region, <span class="at">names_to =</span> <span class="st">&quot;Meta&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Freq&quot;</span>)</span>
+<span id="cb40-12"><a href="results.html#cb40-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-13"><a href="results.html#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb40-14"><a href="results.html#cb40-14" aria-hidden="true" tabindex="-1"></a>tidy<span class="sc">$</span>Vaccination <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(tidy<span class="sc">$</span>Meta, <span class="st">&quot;af_vac&quot;</span>), <span class="st">&quot;Y&quot;</span>, <span class="st">&quot;N&quot;</span>)</span>
+<span id="cb40-15"><a href="results.html#cb40-15" aria-hidden="true" tabindex="-1"></a>tidy<span class="sc">$</span>Case <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(tidy<span class="sc">$</span>Meta, <span class="st">&quot;live&quot;</span>), <span class="st">&quot;Alive&quot;</span>, <span class="st">&quot;Died&quot;</span>)</span>
+<span id="cb40-16"><a href="results.html#cb40-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-17"><a href="results.html#cb40-17" aria-hidden="true" tabindex="-1"></a>tidy <span class="ot">&lt;-</span> <span class="fu">subset</span>(tidy, <span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(Meta) )</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="results.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mosaic plot by Region, vaccination and case</span></span>
+<span id="cb41-2"><a href="results.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcd)</span>
+<span id="cb41-3"><a href="results.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb41-4"><a href="results.html#cb41-4" aria-hidden="true" tabindex="-1"></a>vcd<span class="sc">::</span><span class="fu">mosaic</span>(Case <span class="sc">~</span> WHO_region <span class="sc">+</span> Vaccination, </span>
+<span id="cb41-5"><a href="results.html#cb41-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">direction =</span> <span class="fu">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>),</span>
+<span id="cb41-6"><a href="results.html#cb41-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">zero_size =</span> <span class="dv">10</span>,</span>
+<span id="cb41-7"><a href="results.html#cb41-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">highlighting_fill =</span> <span class="fu">c</span>(<span class="st">&quot;#B9D9EB&quot;</span>, <span class="st">&quot;#00008B&quot;</span>),</span>
+<span id="cb41-8"><a href="results.html#cb41-8" aria-hidden="true" tabindex="-1"></a>            tidy)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>The mosaic plot above exhibits how dead cases and alive cases varies before and after national vaccination process starts across regions. As we can observe from the plot, EURO (Europe) and AMRO (American) accounts for major cases in the globe. Also, most importantly, vaccination do help in decreasing the death cases across regions, especially for WPRO (West Pacific, majorly East Asia) and EURO with total new death cases divided by total new cases drop by 85 percentages. However, in contrast to other regions, SEARO (South East Asia) seems to have the least improvement in death rate after vaccination but if we look at itself, its death rate also drop by 20 percentages.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="results.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mosaic plot by vaccination and case</span></span>
+<span id="cb42-2"><a href="results.html#cb42-2" aria-hidden="true" tabindex="-1"></a>vcd<span class="sc">::</span><span class="fu">mosaic</span>(Case <span class="sc">~</span> Vaccination, </span>
+<span id="cb42-3"><a href="results.html#cb42-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">direction =</span> <span class="fu">c</span>(<span class="st">&quot;v&quot;</span>, <span class="st">&quot;h&quot;</span>), </span>
+<span id="cb42-4"><a href="results.html#cb42-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">highlighting_fill =</span> <span class="fu">c</span>(<span class="st">&quot;#B9D9EB&quot;</span>, <span class="st">&quot;#00008B&quot;</span>),</span>
+<span id="cb42-5"><a href="results.html#cb42-5" aria-hidden="true" tabindex="-1"></a>            tidy)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>This mosaic plot depicted on the global scale which again convinces us that the vaccination do help in decreasing death rate.</p>
+<p>Next, we aims to dig into the deeper insight on the correlation between vaccination and infected cases. As pointed out by Dr. Fauci and many specialists around the globe, the goal of the vaccine is not to prevent you from infecting Covid-19 but to prevent you from dying from this virus. Hence, we want to check is this statement true given on this three-year data.</p>
+<pre><code>tmp2 &lt;- daily_case %&gt;% 
+    group_by(WHO_region) %&gt;%
+    summarize(
+     cases_bf_vac_dayrate = 
+      sum(New_cases[Date_reported &lt; START_DATE]) / length(New_cases[Date_reported &lt; START_DATE]),
+     cases_af_vac_dayrate = 
+      sum(New_cases[Date_reported &gt;= START_DATE]) / length(New_cases[Date_reported &gt;= START_DATE]),
+    )
 
+# REGION(cat) | VAC(cat) | CASE(cat) | COUNT(num)
+tidy2 &lt;- tmp2 %&gt;% pivot_longer(cols = !WHO_region, names_to = &quot;Meta&quot;, values_to = &quot;count&quot;)
+
+library(stringr)
+tidy2$Vaccination &lt;- ifelse(str_detect(tidy2$Meta, &quot;af_vac&quot;), &quot;Yes&quot;, &quot;No&quot;)
+
+tidy2 &lt;- subset(tidy2, select = -c(Meta) )</code></pre>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<pre><code>ggplot(tidy2, aes(x = WHO_region, y=count, fill = Vaccination)) +
+  geom_col(position = &quot;dodge&quot;) 
+  #scale_fill_manual(values = icecreamcolors)</code></pre>
+<p>Now, we use bar chart to compare the infected cases before and after vaccinations. The reason of using bar chart rather than mosaic plot is that the cases now is only for infected cases and no categorial data. Hence, we use grouped bar chart to show the distribution of infected cases before and after vaccination. The y-axis, the count, refers to the total infected cases divided by the days before or after vaccination which can then compare vaccination on the right scale. As we can tell from the bar chart, vaccination does not help in preventing infection of Covid-19. Moreover, all of the regions has doubled the infected cases after vaccination. West Pacific, mainly East Asia, has surged up tremendously which adhere to the facts that East Asia countries had much stricter rules of quarantine which accords with the low cases before vaccination. Also, after the governments relaxed the restrictions, the infected cases rised accordingly. In sum, we are convinced that the vaccination does not help in preventing from infections just like Dr. Fauci and most specialists suggested.</p>
+</div>
+<div id="dive-into-vaccinations" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Dive into Vaccinations<a href="results.html#dive-into-vaccinations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this part, we explore the deep relationship between vaccinations and death rate. We gather the cumulative deaths and cases in each countries after their first vaccinated date. Then we merge this data with the all kinds of vaccinations percentages of each countries to determine whether some deep aspects inflect the death rate.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="results.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Vac data</span></span>
+<span id="cb45-2"><a href="results.html#cb45-2" aria-hidden="true" tabindex="-1"></a>vac_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;./data/vaccination-data.csv&quot;</span>)</span>
+<span id="cb45-3"><a href="results.html#cb45-3" aria-hidden="true" tabindex="-1"></a>vac_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(vac_data, <span class="at">select =</span> <span class="fu">c</span>(</span>
+<span id="cb45-4"><a href="results.html#cb45-4" aria-hidden="true" tabindex="-1"></a>  ISO3,</span>
+<span id="cb45-5"><a href="results.html#cb45-5" aria-hidden="true" tabindex="-1"></a>  TOTAL_VACCINATIONS_PER100, </span>
+<span id="cb45-6"><a href="results.html#cb45-6" aria-hidden="true" tabindex="-1"></a>  PERSONS_VACCINATED_1PLUS_DOSE_PER100, </span>
+<span id="cb45-7"><a href="results.html#cb45-7" aria-hidden="true" tabindex="-1"></a>  PERSONS_FULLY_VACCINATED_PER100, </span>
+<span id="cb45-8"><a href="results.html#cb45-8" aria-hidden="true" tabindex="-1"></a>  PERSONS_BOOSTER_ADD_DOSE_PER100,</span>
+<span id="cb45-9"><a href="results.html#cb45-9" aria-hidden="true" tabindex="-1"></a>  NUMBER_VACCINES_TYPES_USED) </span>
+<span id="cb45-10"><a href="results.html#cb45-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb45-11"><a href="results.html#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="results.html#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. daily cases</span></span>
+<span id="cb45-13"><a href="results.html#cb45-13" aria-hidden="true" tabindex="-1"></a>daily_case <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;./data/WHO-COVID-19-global-data.csv&quot;</span>)</span>
+<span id="cb45-14"><a href="results.html#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="results.html#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Change country code to ISO3</span></span>
+<span id="cb45-16"><a href="results.html#cb45-16" aria-hidden="true" tabindex="-1"></a>daily_case<span class="sc">$</span>ISO3 <span class="ot">=</span> <span class="fu">countryname</span>(daily_case<span class="sc">$</span>Country, <span class="at">destination =</span> <span class="st">&#39;iso3c&#39;</span>)</span>
+<span id="cb45-17"><a href="results.html#cb45-17" aria-hidden="true" tabindex="-1"></a>daily_case<span class="sc">$</span>Date_reported <span class="ot">=</span> <span class="fu">as.Date</span>(daily_case<span class="sc">$</span>Date_reported)</span>
+<span id="cb45-18"><a href="results.html#cb45-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-19"><a href="results.html#cb45-19" aria-hidden="true" tabindex="-1"></a>cases_country <span class="ot">=</span> daily_case[daily_case<span class="sc">$</span>Date_reported <span class="sc">==</span> <span class="st">&quot;2022-12-13&quot;</span>, ]</span>
+<span id="cb45-20"><a href="results.html#cb45-20" aria-hidden="true" tabindex="-1"></a>cases_country <span class="ot">&lt;-</span> <span class="fu">merge</span>(cases_country, vac_data, <span class="at">by=</span><span class="st">&quot;ISO3&quot;</span>)</span>
+<span id="cb45-21"><a href="results.html#cb45-21" aria-hidden="true" tabindex="-1"></a>cases_country <span class="ot">&lt;-</span> <span class="fu">subset</span>(cases_country, <span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(</span>
+<span id="cb45-22"><a href="results.html#cb45-22" aria-hidden="true" tabindex="-1"></a>  New_cases, New_deaths, Date_reported) </span>
+<span id="cb45-23"><a href="results.html#cb45-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb45-24"><a href="results.html#cb45-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-25"><a href="results.html#cb45-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-26"><a href="results.html#cb45-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 3: vaccination-metadata.csv -&gt; get vaccination start date</span></span>
+<span id="cb45-27"><a href="results.html#cb45-27" aria-hidden="true" tabindex="-1"></a>vac_metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;./data/vaccination-metadata.csv&quot;</span>)</span>
+<span id="cb45-28"><a href="results.html#cb45-28" aria-hidden="true" tabindex="-1"></a>vac_metadata <span class="ot">&lt;-</span> vac_metadata[vac_metadata<span class="sc">$</span>START_DATE <span class="sc">!=</span> <span class="st">&quot;&quot;</span>, ]</span>
+<span id="cb45-29"><a href="results.html#cb45-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-30"><a href="results.html#cb45-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Get vaccination EARLIEST start date for each country</span></span>
+<span id="cb45-31"><a href="results.html#cb45-31" aria-hidden="true" tabindex="-1"></a>vac_start <span class="ot">&lt;-</span> vac_metadata <span class="sc">%&gt;%</span> </span>
+<span id="cb45-32"><a href="results.html#cb45-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(ISO3) <span class="sc">%&gt;%</span></span>
+<span id="cb45-33"><a href="results.html#cb45-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(</span>
+<span id="cb45-34"><a href="results.html#cb45-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">START_DATE =</span> <span class="fu">min</span>(START_DATE)</span>
+<span id="cb45-35"><a href="results.html#cb45-35" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb45-36"><a href="results.html#cb45-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-37"><a href="results.html#cb45-37" aria-hidden="true" tabindex="-1"></a>vac_start<span class="sc">$</span>START_DATE <span class="ot">=</span> <span class="fu">as.Date</span>(vac_start<span class="sc">$</span>START_DATE)</span>
+<span id="cb45-38"><a href="results.html#cb45-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-39"><a href="results.html#cb45-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge two df</span></span>
+<span id="cb45-40"><a href="results.html#cb45-40" aria-hidden="true" tabindex="-1"></a>daily_case <span class="ot">&lt;-</span> <span class="fu">merge</span>(daily_case, vac_start, <span class="at">by=</span><span class="st">&quot;ISO3&quot;</span>)</span>
+<span id="cb45-41"><a href="results.html#cb45-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-42"><a href="results.html#cb45-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute Cumulative Death after vaccination</span></span>
+<span id="cb45-43"><a href="results.html#cb45-43" aria-hidden="true" tabindex="-1"></a>daily_case <span class="ot">&lt;-</span> daily_case <span class="sc">%&gt;%</span> </span>
+<span id="cb45-44"><a href="results.html#cb45-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(ISO3, Country_code, Country, WHO_region) <span class="sc">%&gt;%</span></span>
+<span id="cb45-45"><a href="results.html#cb45-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(</span>
+<span id="cb45-46"><a href="results.html#cb45-46" aria-hidden="true" tabindex="-1"></a>     <span class="at">Cumulative_cases_after_vac =</span> <span class="fu">sum</span>(New_cases[Date_reported <span class="sc">&gt;=</span> START_DATE]),</span>
+<span id="cb45-47"><a href="results.html#cb45-47" aria-hidden="true" tabindex="-1"></a>     <span class="at">Cumulative_death_after_vac =</span> <span class="fu">sum</span>(New_deaths[Date_reported <span class="sc">&gt;=</span> START_DATE]),</span>
+<span id="cb45-48"><a href="results.html#cb45-48" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb45-49"><a href="results.html#cb45-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-50"><a href="results.html#cb45-50" aria-hidden="true" tabindex="-1"></a>booster <span class="ot">&lt;-</span> daily_case <span class="sc">%&gt;%</span> </span>
+<span id="cb45-51"><a href="results.html#cb45-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">merge</span>(vac_data, <span class="at">by=</span><span class="st">&quot;ISO3&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-52"><a href="results.html#cb45-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb45-53"><a href="results.html#cb45-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-54"><a href="results.html#cb45-54" aria-hidden="true" tabindex="-1"></a>booster<span class="sc">$</span>death_rate <span class="ot">=</span> booster<span class="sc">$</span>Cumulative_death_after_vac <span class="sc">/</span> booster<span class="sc">$</span>Cumulative_cases_after_vac <span class="sc">*</span> <span class="dv">1000</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="results.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(booster, <span class="fu">aes</span>(<span class="at">x =</span> TOTAL_VACCINATIONS_PER100, <span class="at">y =</span> death_rate)) <span class="sc">+</span></span>
+<span id="cb46-2"><a href="results.html#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color=</span><span class="st">&#39;blue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb46-3"><a href="results.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>, <span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb46-4"><a href="results.html#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;percentage of total vaccinations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb46-5"><a href="results.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;deaths per 1000 cases&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="results.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(booster, <span class="fu">aes</span>(<span class="at">x =</span> PERSONS_VACCINATED_1PLUS_DOSE_PER100, <span class="at">y =</span> death_rate)) <span class="sc">+</span></span>
+<span id="cb47-2"><a href="results.html#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color=</span><span class="st">&#39;blue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb47-3"><a href="results.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>, <span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb47-4"><a href="results.html#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;percentage of more than one dose vaccinations&quot;</span>)<span class="sc">+</span></span>
+<span id="cb47-5"><a href="results.html#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;deaths per 1000 cases&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="results.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(booster, <span class="fu">aes</span>(<span class="at">x =</span> PERSONS_FULLY_VACCINATED_PER100, <span class="at">y =</span> death_rate)) <span class="sc">+</span></span>
+<span id="cb48-2"><a href="results.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color=</span><span class="st">&#39;blue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb48-3"><a href="results.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>, <span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb48-4"><a href="results.html#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;percentage of fully vaccinated&quot;</span>)<span class="sc">+</span></span>
+<span id="cb48-5"><a href="results.html#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;deaths per 1000 cases&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="results.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(booster, <span class="fu">aes</span>(<span class="at">x =</span> PERSONS_BOOSTER_ADD_DOSE_PER100, <span class="at">y =</span> death_rate)) <span class="sc">+</span></span>
+<span id="cb49-2"><a href="results.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color=</span><span class="st">&#39;blue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb49-3"><a href="results.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">color =</span> <span class="st">&#39;red&#39;</span>, <span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb49-4"><a href="results.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;percentage of booster&quot;</span>)<span class="sc">+</span></span>
+<span id="cb49-5"><a href="results.html#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;deaths per 1000 cases&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p>The results shows that all four variables are negatively associated with mortality, suggesting that vaccination is necessary to prevent high death rate.</p>
+<p>Finally, we use box plot to show the relationship between death rate and the number of vaccination types used in a country.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="results.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(booster, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(<span class="fu">as.character</span>(NUMBER_VACCINES_TYPES_USED), <span class="sc">-</span>death_rate, median), <span class="at">y =</span> death_rate)) <span class="sc">+</span></span>
+<span id="cb50-2"><a href="results.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb50-3"><a href="results.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;number of vaccination types used&quot;</span>)<span class="sc">+</span></span>
+<span id="cb50-4"><a href="results.html#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;deaths per 1000 cases&quot;</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p>The box plot shows that there is no significant relationship between number of vaccination types used and the death rate (Countries who uses 11 types of vaccinations even have the largest median of death rate.)</p>
+
+</div>
 </div>
             </section>
 
@@ -227,7 +535,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/results.Rmd",
+"link": "https://github.com/lucas66zhang/CovidWorldwideResearch/edit/main/results.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -235,7 +543,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/results.Rmd",
+"link": "https://github.com/lucas66zhang/CovidWorldwideResearch/blob/main/results.Rmd",
 "text": null
 },
 "download": null,

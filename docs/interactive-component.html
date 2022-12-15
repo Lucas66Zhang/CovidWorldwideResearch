@@ -20,7 +20,7 @@
   
   
 
-<meta name="author" content="Names" />
+<meta name="author" content="Sida Huang" />
 
 
 <meta name="date" content="2022-12-15" />
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">SHORT TITLE HERE</a></li>
+<li><a href="./">COVID-19 Worldwide Research</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
@@ -157,15 +157,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#cleaning-transformation"><i class="fa fa-check"></i><b>3.2</b> Cleaning / transformation</a></li>
 <li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#missing-value-analysis"><i class="fa fa-check"></i><b>3.3</b> Missing value analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a></li>
+<li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="results.html"><a href="results.html#abstract"><i class="fa fa-check"></i><b>4.1</b> Abstract</a></li>
+<li class="chapter" data-level="4.2" data-path="results.html"><a href="results.html#a-brief-look-at-the-spread-of-covid-19-and-vaccinations"><i class="fa fa-check"></i><b>4.2</b> A brief look at the spread of Covid-19 and Vaccinations</a></li>
+<li class="chapter" data-level="4.3" data-path="results.html"><a href="results.html#do-vaccinations-really-work"><i class="fa fa-check"></i><b>4.3</b> Do vaccinations really work?</a></li>
+<li class="chapter" data-level="4.4" data-path="results.html"><a href="results.html#dive-into-vaccinations"><i class="fa fa-check"></i><b>4.4</b> Dive into Vaccinations</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>5</b> Interactive component</a></li>
 <li class="chapter" data-level="6" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="conclusion.html"><a href="conclusion.html#conclusion-from-result-part"><i class="fa fa-check"></i><b>6.1</b> Conclusion from Result Part</a></li>
-<li class="chapter" data-level="6.2" data-path="conclusion.html"><a href="conclusion.html#conclusion-from-interactive-part"><i class="fa fa-check"></i><b>6.2</b> Conclusion from Interactive Part</a></li>
-<li class="chapter" data-level="6.3" data-path="conclusion.html"><a href="conclusion.html#limitations"><i class="fa fa-check"></i><b>6.3</b> Limitations</a></li>
-<li class="chapter" data-level="6.4" data-path="conclusion.html"><a href="conclusion.html#future-directions"><i class="fa fa-check"></i><b>6.4</b> Future directions</a></li>
-<li class="chapter" data-level="6.5" data-path="conclusion.html"><a href="conclusion.html#lesson-learns"><i class="fa fa-check"></i><b>6.5</b> Lesson learns</a></li>
+<li class="chapter" data-level="6.1" data-path="conclusion.html"><a href="conclusion.html#conclusion-1"><i class="fa fa-check"></i><b>6.1</b> Conclusion</a></li>
+<li class="chapter" data-level="6.2" data-path="conclusion.html"><a href="conclusion.html#limitations"><i class="fa fa-check"></i><b>6.2</b> Limitations</a></li>
+<li class="chapter" data-level="6.3" data-path="conclusion.html"><a href="conclusion.html#future-directions"><i class="fa fa-check"></i><b>6.3</b> Future directions</a></li>
+<li class="chapter" data-level="6.4" data-path="conclusion.html"><a href="conclusion.html#lesson-learns"><i class="fa fa-check"></i><b>6.4</b> Lesson learns</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -191,8 +196,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>
 Monthly newly reported COVID-19 cases
 </h3>
+<div>
+In this part, we use D3 to create a world map that shows the newly reported COVID-19 cases per month in every country. The color scale indicates the number of newly reported cases per month. User can use the form or the buttons to select a specific month and show the result.
+</div>
 <div id="plot">
 
+</div>
+<div>
+From the plot we can clearly see how COVID-19 spread over time.At first the COVID-19 spread from China. After two months (from March 2020), the number of newly reported cases in U.S. is far more than the other countries. As time goes by, we can see that U.S., Russia, India and Brazil have the highest number of reported cases in most of the time intervals.
 </div>
 <style>
 path {
@@ -203,9 +214,10 @@ path {
 </style>
 <script src="https://d3js.org/d3.v7.js"></script>
 <script src="https://unpkg.com/topojson@3"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
 <script>
-const width = 1000;
-const height = 500;
+const width = 1500;
+const height = 600;
 
 const form = d3.select('div#plot')
   .append('form')
@@ -225,17 +237,20 @@ select.selectAll('option')
     .attr('value', d => d)
     .text(d => d);
 
-
+const prebtn = d3.select('div#plot').append('button').attr('id','premonth').text("Previous month")
+const nxtbtn = d3.select('div#plot').append('button').attr('id','nxtmonth').text('Next month')
 
 const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_data_selfuse/main/monthly_with_code.csv').then(function(data){
 
 
   let filtered_data = data.filter(d=>d.month == "2020/1/1")
   let colorScale = d3.scaleSequential(d3.interpolateReds)
-  .domain([0, d3.max(data, d => d.New_cases)]);
+  .domain([0, d3.max(filtered_data, d => Number(d.New_cases))]);
+
+
   const projection = d3.geoMercator()
       .center([0, 5 ])
-      .scale(150)
+      .scale(120)
       .rotate([-180,0]);
 
   const svg = d3.select("div#plot")
@@ -247,7 +262,12 @@ const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_d
       .projection(projection);
 
   const g = svg.append("g");
+
+  let legend = d3.legendColor().scale(colorScale);
+  let legend_svg = svg.append("svg")
+    .attr("transform", "translate(500,10)")
   
+  legend_svg.call(legend);
 
   // load and display the World
   d3.json("https://unpkg.com/world-atlas@1.1.4/world/110m.json").then(function(topology) {
@@ -273,6 +293,81 @@ const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_d
 
   });
 
+  prebtn.on('click', () => {
+    let curmonth = d3.select('.form-control#my_month').node().value;
+
+    currindex = months.findIndex((e)=>e==curmonth)
+    preidx = -1
+    if (currindex==0){
+      preidx = 35
+    }
+    else{
+      preidx = currindex - 1
+    }
+    month = months[preidx]
+    d3.select('.form-control#my_month').node().value = month
+    // update the data to only include cases for the selected month
+    filtered_data = data.filter(d=>d.month == month)
+    // update the color scale
+    colorScale.domain([0, d3.max(filtered_data, d => Number(d.New_cases))]);
+
+    legend = d3.legendColor().scale(colorScale);
+    legend_svg.call(legend);
+    svg.selectAll('path')
+    .transition()
+    .duration(100)
+    .style('fill', d => {
+    // find the corresponding data for this country
+    const countrydata = filtered_data.find(
+      country => Number(country.code) == Number(d.id) 
+    )
+    if (typeof(countrydata) == "undefined"){
+      return colorScale(0)
+    }
+    else{
+      return colorScale(countrydata.New_cases)
+    }
+    })
+  });
+
+  nxtbtn.on('click', () => {
+    let curmonth = d3.select('.form-control#my_month').node().value;
+
+    currindex = months.findIndex((e)=>e==curmonth)
+    preidx = -1
+    if (currindex==35){
+      preidx = 0
+    }
+    else{
+      preidx = currindex + 1
+    }
+    month = months[preidx]
+    d3.select('.form-control#my_month').node().value = month
+    // update the data to only include cases for the selected month
+    filtered_data = data.filter(d=>d.month == month)
+      // update the color scale
+    colorScale.domain([0, d3.max(filtered_data, d => Number(d.New_cases))]);
+
+    legend = d3.legendColor().scale(colorScale);
+    legend_svg.call(legend);
+
+    svg.selectAll('path')
+    .transition()
+    .duration(100)
+    .style('fill', d => {
+    // find the corresponding data for this country
+    const countrydata = filtered_data.find(
+      country => Number(country.code) == Number(d.id) 
+    )
+    if (typeof(countrydata) == "undefined"){
+      return colorScale(0)
+    }
+    else{
+      return colorScale(countrydata.New_cases)
+    }
+    })
+  });
+
   select.on('change', () => {
   // get the selected month
   const month = d3.select('.form-control#my_month').node().value;
@@ -281,7 +376,10 @@ const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_d
   filtered_data = data.filter(d=>d.month == month)
 
   // update the color scale
-  // colorScale.domain = [0, d3.max(filteredData, d => d.New_cases)];
+  colorScale.domain([0, d3.max(filtered_data, d => Number(d.New_cases))]);
+
+    legend = d3.legendColor().scale(colorScale);
+    legend_svg.call(legend);
   // console.log(filtered_data)
   // update the colors on the map
   svg.selectAll('path')
@@ -300,6 +398,8 @@ const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_d
   }
   })
 });
+
+
 
 })
 
@@ -343,7 +443,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/interactive.Rmd",
+"link": "https://github.com/lucas66zhang/CovidWorldwideResearch/edit/main/interactive.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -351,7 +451,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/interactive.Rmd",
+"link": "https://github.com/lucas66zhang/CovidWorldwideResearch/blob/main/interactive.Rmd",
 "text": null
 },
 "download": null,

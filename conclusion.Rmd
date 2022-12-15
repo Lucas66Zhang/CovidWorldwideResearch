@@ -1,6 +1,6 @@
 # Conclusion
 
-## Conclusion from Result Part
+## Conclusion
 
 Based on our exploration in the result part, we have the following findings that might be surprising to the majority.
 
@@ -10,7 +10,6 @@ Based on our exploration in the result part, we have the following findings that
 4.  Being vaccinated cannot prevent infection because the cumulative cases do not decrease after vaccinations in each region. But vaccines do reduce the death rate in all regions significantly.
 5.  The number of cases reported does not have obvious relationship to death rate. Most of the countries with large infected population have a relatively low death rate.
 
-## Conclusion from Interactive Part
 
 ## Limitations
 

@@ -1,9 +1,14 @@
 --- 
 title: "COVID-19 Worldwide Research"
-author: "Names"
+author: "Sida Huang"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
 # Introduction
 
+Throughout these three years, COVID-19 has severely influenced the life of people around the globe. Though governments have taken different measures to control the spread of COVID-19, it seems that the reported cases of COVID-19 still remain high in many places. In this project, we're interested in the worldwide COVID-19 virus and vaccination data. 
+
+This project aims at exploring the distribution of worldwide COVID-19 data from time and space dimensions. Specifically, we'll take a look at the daily reported and death COVID-19 cases of different countries. From this part, we want to find out the spread path of COVID-19 and the characteristic of heavily infected countries. Also, we'll look at the vaccination data and explore whether vaccination is effective on reducing reported or death COVID-19 cases. 
+
+Our research will provide a grand view of worldwide COVID-19 situation. Hopefully, we'll also provide some insights of whether vaccination is an effective way to control the spread of COVID-19.

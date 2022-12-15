@@ -20,10 +20,13 @@ vaccination-metadata-2
 cleaning-transformation
 missing-value-analysis
 results
+abstract
+a-brief-look-at-the-spread-of-covid-19-and-vaccinations
+do-vaccinations-really-work
+dive-into-vaccinations
 interactive-component
 conclusion
-conclusion-from-result-part
-conclusion-from-interactive-part
+conclusion-1
 limitations
 future-directions
 lesson-learns
