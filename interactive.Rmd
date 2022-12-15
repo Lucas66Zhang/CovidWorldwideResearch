@@ -1,5 +1,5 @@
 # Interactive component
-
+<h3>Monthly newly reported COVID-19 cases</h3>
 
 <div id="plot"></div>
 <style>
@@ -19,8 +19,10 @@ const height = 500;
 const form = d3.select('div#plot')
   .append('form')
   .attr('class', 'form-inline');
+  
 const select = form.append('select')
-  .attr('class', 'form-control');
+  .attr('class', 'form-control')
+  .attr('id', 'my_month');
 const months = ['2020/1/1', '2020/2/1', '2020/3/1', '2020/4/1','2020/5/1','2020/6/1','2020/7/1','2020/8/1','2020/9/1','2020/10/1','2020/11/1','2020/12/1',
   '2021/1/1','2021/2/1','2021/3/1','2021/4/1','2021/5/1','2021/6/1','2021/7/1','2021/8/1','2021/9/1','2021/10/1','2021/11/1','2021/12/1',
   '2022/1/1','2022/2/1','2022/3/1','2022/4/1','2022/5/1','2022/6/1','2022/7/1','2022/8/1','2022/9/1','2022/10/1','2022/11/1','2022/12/1',
@@ -82,7 +84,7 @@ const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_d
 
   select.on('change', () => {
   // get the selected month
-  const month = d3.select('.form-control').node().value;
+  const month = d3.select('.form-control#my_month').node().value;
 
   // update the data to only include cases for the selected month
   filtered_data = data.filter(d=>d.month == month)
@@ -109,4 +111,5 @@ const covidData = d3.csv('https://raw.githubusercontent.com/amethystorm/public_d
 });
 
 })
+
 </script>
