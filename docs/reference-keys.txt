@@ -22,3 +22,8 @@ missing-value-analysis
 results
 interactive-component
 conclusion
+conclusion-from-result-part
+conclusion-from-interactive-part
+limitations
+future-directions
+lesson-learns

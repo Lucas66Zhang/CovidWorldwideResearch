@@ -1,2 +1,29 @@
 # Conclusion
 
+## Conclusion from Result Part
+
+Based on our exploration in the result part, we have the following findings that might be surprising to the majority.
+
+1.  Since 2021-12, the spread of Covid-19 is almost irresistible due to the Omicron variant. No matter what policy a country adapt, the new cases reported from different WHO region stay at a relatively high level. However, it seems that the danger of this variant is reduced compared to its ancestor because the deaths reported all over the world decreased significantly in spite of the increase of new cases reported.
+2.  Economically active countries and countries with large population tend to have larger infected population. This is because Covid-19 is mainly airborne and droplet-borne, first infecting the human respiratory tract.
+3.  The distribution of vaccines is somewhat still unfair in each WHO region and among different regions. A lot of African countries still lack vaccines. Only a few of them have a total vaccinations more than their population.
+4.  Being vaccinated cannot prevent infection because the cumulative cases do not decrease after vaccinations in each region. But vaccines do reduce the death rate in all regions significantly.
+5.  The number of cases reported does not have obvious relationship to death rate. Most of the countries with large infected population have a relatively low death rate.
+
+## Conclusion from Interactive Part
+
+## Limitations
+
+Due to the limitation of time and lack of related data, the result part of our final projects has the following limitations.
+
+1.  We only explore the correlation between death rate and four detailed information about vaccinations(the ratios of vaccinations, more than one dose vaccinations, full vaccinated and booster dose), Although the result show that all of the four ratios are negatively related to the death rate, we are not sure which is the reason of the decrease of death rate.
+2.  We failed to get detailed data about the type of vaccines that different countries use. We do not know which country use which type of vaccines most and least and so on. This really limits our exploration on how to best inoculate.
+
+## Future directions
+
+In the future, if possible, we will focus on the difference between different kinds of vaccines. For example, are mRNA vaccines more effective than inactivated vaccines? are people who get multiple kinds of vaccinations less likely to be infected than those who only get one kind of vaccine?
+
+## Lesson learns
+
+1. Use RStudio and Github to take multi-person collaboration and control version.
+2. Use R language to do exploratory data analysis and visualization.
